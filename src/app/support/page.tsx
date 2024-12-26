@@ -23,7 +23,7 @@ function Hero() {
             </Link>
           }
         />
-        <div className="pt-2 sm:pt-24 md:pt-32">
+        <div className="pt-2 sm:pt-24">
           <h1 className="font-display text-balance text-head/[0.9] font-medium leading-[50px] tracking-tight text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
             Support Nocturne
           </h1>
