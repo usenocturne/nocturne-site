@@ -55,7 +55,7 @@ function Hero() {
           <div className="relative mt-12 h-[150px] overflow-hidden sm:h-[450px]">
             <img
               src="/images/nocturne.png"
-              className="absolute left-1/2 w-full -translate-x-1/2 animate-fade-up object-contain opacity-0"
+              className="pointer-events-none absolute left-1/2 w-full -translate-x-1/2 animate-fade-up object-contain opacity-0"
             />
           </div>
         </div>
