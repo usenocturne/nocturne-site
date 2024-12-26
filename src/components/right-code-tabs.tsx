@@ -114,7 +114,7 @@ const RightCodeTabs = () => {
                   className={
                     activeTab === 'setup'
                       ? 'rounded-tl-xl border-r border-t-4 border-l-gray-50 border-r-gray-200 border-t-gray-50 bg-white px-4 py-2 text-blue-600'
-                      : 'border-r border-t-4 border-gray-200 border-t-gray-50 px-4 py-2 hover:text-gray-900'
+                      : 'border-r border-t-4 border-gray-200 border-t-gray-50 px-4 py-2 transition duration-150 ease-in-out hover:text-gray-900'
                   }
                 >
                   <div className="flex items-center gap-2">
@@ -136,7 +136,7 @@ const RightCodeTabs = () => {
                   className={
                     activeTab === 'readme'
                       ? 'rounded-tr-xl border-t-4 border-l-gray-200 border-r-gray-50 border-t-gray-50 bg-white px-4 py-2 text-blue-600'
-                      : 'border-r border-t-4 border-gray-200 border-t-gray-50 px-4 py-2 hover:text-gray-900'
+                      : 'border-r border-t-4 border-gray-200 border-t-gray-50 px-4 py-2 transition duration-150 ease-in-out hover:text-gray-900'
                   }
                 >
                   <div className="flex items-center gap-2">
