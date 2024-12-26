@@ -5,10 +5,12 @@ import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Gradient } from '@/components/gradient'
 import { InterstateRows } from '@/components/interstate-rows'
+import LeftCodeTabs from '@/components/left-code-tabs'
 import { Link } from '@/components/link'
 import { LogoCluster } from '@/components/logo-cluster'
 import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
+import RightCodeTabs from '@/components/right-code-tabs'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -75,54 +77,7 @@ function BentoSection() {
           eyebrow="Free"
           title="Open Source"
           description="Built by the community, for the community. Always free and open source."
-          graphic={
-            <div className="relative px-6 pt-8 md:pr-0">
-              <div className="mx-auto h-72 max-w-2xl overflow-hidden bg-texture-1 bg-cover md:mx-0 md:max-w-none">
-                <div className="relative w-screen overflow-hidden rounded-tl-xl bg-white/60 shadow-sm backdrop-blur-xl">
-                  <div className="absolute inset-0 rounded-tl-xl border-l-4 border-gray-50" />
-                  <div className="relative flex bg-gray-50">
-                    <div className="-mb-px flex text-sm/6 font-medium text-gray-600">
-                      <div className="rounded-tl-xl border-b border-l-4 border-r border-t-4 border-b-blue-500 border-l-gray-50 border-r-gray-200 border-t-gray-50 bg-white px-4 py-2 text-blue-600">
-                        playlistService.jsx
-                      </div>
-                      <div className="border-r border-t-4 border-gray-200 border-t-gray-50 px-4 py-2">
-                        artistService.jsx
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <CodeBlock
-                      code={`export const fetchUserPlaylists = async (accessToken, setPlaylists, updateGradientColors, handleError) => {
-  try {
-    const response = await fetch("https://api.spotify.com/v1/me/playlists", {
-      headers: {
-        Authorization: \`Bearer \${accessToken}\`,
-      },
-    });
-    if (response.ok) {
-      const data = await response.json();
-      const validPlaylists = data.items.filter(item => item && item.id);
-      if (validPlaylists.length > 0) {
-        const imageUrl = validPlaylists[0].images[0]?.url;
-        if (imageUrl) {
-          localStorage.setItem("libraryImage", imageUrl);
-          updateGradientColors(imageUrl, "library");
-        }
-      }
-      setPlaylists(validPlaylists);
-    } else {
-      console.error("Error fetching user playlists:", response.status);
-    }
-  } catch (error) {
-    console.error("Error fetching user playlists:", error.message);
-  }
-};`}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
+          graphic={<LeftCodeTabs />}
           fade={['bottom']}
           className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
         />
@@ -130,49 +85,7 @@ function BentoSection() {
           eyebrow="Simple"
           title="Easy Setup"
           description="Get up and running in minutes with our step-by-step installation guide and community support."
-          graphic={
-            <div className="relative px-6 pt-8 md:pl-0">
-              <div className="mx-auto h-72 max-w-2xl overflow-hidden rounded-tr-xl bg-texture-2 bg-cover md:mx-0 md:max-w-none">
-                <div className="relative w-full overflow-hidden rounded-tr-xl bg-white/60 shadow-sm backdrop-blur-xl">
-                  <div className="absolute inset-0 rounded-tr-xl border-r-4 border-gray-50" />
-                  <div className="relative flex bg-gray-50">
-                    <div className="-mb-px flex text-sm/6 font-medium text-gray-600">
-                      <div className="border-r border-t-4 border-gray-200 border-t-gray-50 px-4 py-2">
-                        setup_hotspot.py
-                      </div>
-                      <div className="rounded-tr-xl border-b border-t-4 border-b-blue-500 border-l-gray-200 border-r-gray-50 border-t-gray-50 bg-white px-4 py-2 text-blue-600">
-                        README.md
-                      </div>
-                    </div>
-                  </div>
-                  <pre className="whitespace-normal px-4 pt-4 text-sm text-[#383A42]">
-                    <code className="block whitespace-pre-wrap break-words pb-4">
-                      If you haven't already, download superbird-tool and run
-                      the setup process detailed here.
-                    </code>
-                    <code className="block whitespace-pre-wrap break-words pb-4">
-                      Download and unzip the latest image from Releases, connect
-                      Car Thing to your computer in USB Mode (hold preset
-                      buttons 1 and 4 while connecting), and run the following
-                      from your command line:
-                    </code>
-                    <code className="block whitespace-pre-wrap break-words">
-                      # Go into the superbird-tool repository
-                    </code>
-                    <code className="block whitespace-pre-wrap break-words pb-2">
-                      $ cd C:\path\to\superbird-tool-main
-                    </code>
-                    <code className="block whitespace-pre-wrap break-words">
-                      # Find device
-                    </code>
-                    <code className="block whitespace-pre-wrap break-words pb-2">
-                      $ python superbird_tool.py --find_device
-                    </code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-          }
+          graphic={<RightCodeTabs />}
           fade={['bottom']}
           className="lg:col-span-3 lg:rounded-tr-4xl"
         />
