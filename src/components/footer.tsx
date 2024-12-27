@@ -55,6 +55,7 @@ function Sitemap() {
           <SitemapLink href="https://github.com/usenocturne">
             Source Code
           </SitemapLink>
+          <SitemapLink href="/about">About</SitemapLink>
         </SitemapLinks>
       </div>
     </>
