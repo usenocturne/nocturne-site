@@ -6,12 +6,21 @@ export const metadata: Metadata = {
     template: '%s - Nocturne',
     default: "Nocturne - Your Car Thing's Second Chapter",
   },
-  description: "When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.",
+  description:
+    'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
   metadataBase: new URL('https://usenocturne.com/'),
   alternates: {
     canonical: '/',
   },
-  keywords: ['Nocturne', 'Car Thing', 'Car Thing Mod', 'Car Thing Hack', 'Spotify Car Thing', 'Spotify Car Thing Mod', 'Spotify Car Thing Hack'],
+  keywords: [
+    'Nocturne',
+    'Car Thing',
+    'Car Thing Mod',
+    'Car Thing Hack',
+    'Spotify Car Thing',
+    'Spotify Car Thing Mod',
+    'Spotify Car Thing Hack',
+  ],
   authors: [{ name: 'Nocturne Team' }],
   creator: 'Nocturne Team',
   publisher: 'Nocturne',
@@ -31,7 +40,8 @@ export const metadata: Metadata = {
     siteName: 'Nocturne',
     url: 'https://usenocturne.com/',
     title: "Nocturne - Your Car Thing's Second Chapter",
-    description: "When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.",
+    description:
+      'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
     locale: 'en_US',
     images: [
       {
@@ -45,27 +55,33 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Nocturne - Your Car Thing's Second Chapter",
-    description: "When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.",
+    description:
+      'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
     images: ['https://usenocturne.com/images/og-image.png'],
   },
+  verification: {
+    google: 'G-YB8VYY7389',
+  },
   other: {
-    'wikidata': 'Q131441227',
-    'wikipedia': 'https://wikipedia.org/wiki/Nocturne_(software)',
-  }
+    wikidata: 'Q131441227',
+    wikipedia: 'https://wikipedia.org/wiki/Nocturne_(software)',
+  },
 }
 
 const jsonLdSoftware = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'Nocturne',
-  description: "When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.",
+  description:
+    'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
   applicationCategory: 'Multimedia',
   operatingSystem: 'Cross-platform',
   softwareVersion: '2.1.2',
   downloadUrl: 'https://github.com/usenocturne/nocturne-image/releases/latest',
   isAccessibleForFree: true,
   installUrl: 'https://usenocturne.com/installation',
-  softwareRequirements: 'Spotify Car Thing, Raspberry Pi, Spotify Premium account',
+  softwareRequirements:
+    'Spotify Car Thing, Raspberry Pi, Spotify Premium account',
   sameAs: [
     'https://wikipedia.org/wiki/Nocturne_(software)',
     'https://www.wikidata.org/wiki/Q131441227',
@@ -89,13 +105,13 @@ const jsonLdOrganization = {
     'https://wikipedia.org/wiki/Nocturne_(software)',
     'https://www.wikidata.org/wiki/Q131441227',
     'https://github.com/usenocturne',
-    'https://discord.gg/GTP9AawHPt'
+    'https://discord.gg/GTP9AawHPt',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'support',
-    url: 'https://discord.gg/GTP9AawHPt'
-  }
+    url: 'https://discord.gg/GTP9AawHPt',
+  },
 }
 
 const jsonLdWebSite = {
@@ -107,10 +123,10 @@ const jsonLdWebSite = {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://usenocturne.com/search?q={search_term_string}'
+      urlTemplate: 'https://usenocturne.com/search?q={search_term_string}',
     },
-    'query-input': 'required name=search_term_string'
-  }
+    'query-input': 'required name=search_term_string',
+  },
 }
 
 const jsonLdBreadcrumbList = {
@@ -121,21 +137,21 @@ const jsonLdBreadcrumbList = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://usenocturne.com'
+      item: 'https://usenocturne.com',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Installation',
-      item: 'https://usenocturne.com/installation'
+      item: 'https://usenocturne.com/installation',
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Support',
-      item: 'https://usenocturne.com/support'
-    }
-  ]
+      item: 'https://usenocturne.com/support',
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -156,7 +172,9 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdOrganization),
+          }}
         />
         <script
           type="application/ld+json"
@@ -164,7 +182,9 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumbList) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdBreadcrumbList),
+          }}
         />
       </head>
       <body className="text-gray-950 antialiased">{children}</body>
