@@ -1,6 +1,7 @@
 import GoogleAnalytics from '@/components/google-analytics'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
+import { getLatestCommitDate } from './lib/getLastModified'
 
 export const metadata: Metadata = {
   title: {
@@ -72,7 +73,7 @@ const jsonLdSoftware = {
   name: 'Nocturne',
   description:
     'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
-  applicationCategory: 'Multimedia',
+  applicationCategory: ['Multimedia', 'MusicPlayer'],
   operatingSystem: 'Cross-platform',
   softwareVersion: '2.1.2',
   downloadUrl: 'https://github.com/usenocturne/nocturne-image/releases/latest',
@@ -84,6 +85,7 @@ const jsonLdSoftware = {
     'https://wikipedia.org/wiki/Nocturne_(software)',
     'https://www.wikidata.org/wiki/Q131441227',
     'https://github.com/usenocturne',
+    'https://discord.gg/GTP9AawHPt',
   ],
   author: {
     '@type': 'Organization',
@@ -91,6 +93,15 @@ const jsonLdSoftware = {
     url: 'https://usenocturne.com/',
   },
   license: 'https://opensource.org/licenses/MIT',
+  datePublished: '2024-09-22',
+  dateModified: await getLatestCommitDate(),
+  keywords: [
+    'Car Thing',
+    'Spotify',
+    'Music Player',
+    'Open Source',
+    'Car Entertainment',
+  ],
 }
 
 const jsonLdOrganization = {
@@ -99,6 +110,7 @@ const jsonLdOrganization = {
   name: 'Nocturne',
   url: 'https://usenocturne.com',
   logo: 'https://usenocturne.com/images/logo.png',
+  foundingDate: '2024-09-22',
   sameAs: [
     'https://wikipedia.org/wiki/Nocturne_(software)',
     'https://www.wikidata.org/wiki/Q131441227',
@@ -110,6 +122,11 @@ const jsonLdOrganization = {
     contactType: 'support',
     url: 'https://discord.gg/GTP9AawHPt',
   },
+  knowsAbout: [
+    'Spotify Car Thing',
+    'Open Source Software',
+    'Car Entertainment Systems',
+  ],
 }
 
 const jsonLdWebSite = {
@@ -152,7 +169,7 @@ const jsonLdBreadcrumbList = {
   ],
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
