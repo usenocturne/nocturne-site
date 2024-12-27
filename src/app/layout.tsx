@@ -1,3 +1,4 @@
+import GoogleAnalytics from '@/components/google-analytics'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 
@@ -58,9 +59,6 @@ export const metadata: Metadata = {
     description:
       'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
     images: ['https://usenocturne.com/images/og-image.png'],
-  },
-  verification: {
-    google: 'G-YB8VYY7389',
   },
   other: {
     wikidata: 'Q131441227',
@@ -187,7 +185,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="text-gray-950 antialiased">{children}</body>
+      <body className="text-gray-950 antialiased">
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   )
 }
