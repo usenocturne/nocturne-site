@@ -32,6 +32,90 @@ const people = [
   },
 ]
 
+const testimonials = [
+  {
+    body: 'Thank you for helping revive this device!',
+    author: {
+      name: 'Jade Robbins',
+      handle: 'jaderobbins',
+      imageUrl: 'testimonials/1.jpg',
+    },
+    href: 'https://x.com/jaderobbins/status/1861117484927197615',
+  },
+  {
+    body: 'This is awesome thank you!',
+    author: {
+      name: 'Alex Fife',
+      handle: 'alextfife',
+      imageUrl: 'testimonials/2.jpg',
+    },
+    href: 'https://x.com/alextfife/status/1861080147954180142',
+  },
+  {
+    body: 'These people are doing amazing work.',
+    author: {
+      name: 'Jeff Xu',
+      handle: 'JSandals1',
+      imageUrl: 'testimonials/3.jpg',
+    },
+    href: 'https://x.com/JSandals1/status/1861238960548163770',
+  },
+  {
+    body: 'I love when people take matters into their own hands.',
+    author: {
+      name: 'Ray Wong',
+      handle: 'raywongy',
+      imageUrl: 'testimonials/4.jpg',
+    },
+    href: 'https://x.com/raywongy/status/1861248921877569892',
+  },
+  {
+    body: 'Sick!!!!!!!!!',
+    author: {
+      name: 'alistair',
+      handle: 'alistaiir',
+      imageUrl: 'testimonials/5.jpg',
+    },
+    href: 'https://x.com/alistaiir/status/1856887872370217401',
+  },
+  {
+    body: 'So excited for this!',
+    author: {
+      name: 'Jim England',
+      handle: 'JimEngland',
+      imageUrl: 'testimonials/6.jpg',
+    },
+    href: 'https://x.com/JimEngland/status/1852470793684635941',
+  },
+  {
+    body: 'lfg, this is the news i’ve been waiting for!!!',
+    author: {
+      name: 'janniks',
+      handle: 'janniksco',
+      imageUrl: 'testimonials/7.jpg',
+    },
+    href: 'https://x.com/janniksco/status/1852361766283444334',
+  },
+  {
+    body: 'Incredible stuff!',
+    author: {
+      name: 'brian',
+      handle: 'officialbois',
+      imageUrl: 'testimonials/8.jpg',
+    },
+    href: 'https://x.com/officialbois/status/1852280293320999021',
+  },
+  {
+    body: 'Oh this is cool.',
+    author: {
+      name: 'Parker Rex',
+      handle: 'ParkerRex',
+      imageUrl: 'testimonials/9.jpg',
+    },
+    href: 'https://x.com/ParkerRex/status/1861615461676241376',
+  },
+]
+
 function Hero() {
   return (
     <div className="relative">
@@ -99,13 +183,13 @@ function About() {
             />
           </div>
           <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl pb-32 pt-12 sm:pt-60 lg:pt-8">
+            <div className="mx-auto max-w-7xl pb-20 pt-12 sm:pb-32 sm:pt-60 lg:pt-8">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full px-8 sm:px-0 lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
                     Giving Hardware a Second Life.
                   </h1>
-                  <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                  <p className="mt-8 text-pretty text-lg text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
                     When Spotify ended Car Thing support, thousands of devices
                     became paperweights overnight. We're changing that by
                     creating open source software that transforms these
@@ -166,46 +250,52 @@ function About() {
           </div>
         </div>
 
-        <div className="mx-auto -mt-12 max-w-7xl sm:mt-0 xl:-mt-8">
-          <div className="mx-auto max-w-2xl px-8 sm:px-0 lg:mx-0 lg:max-w-none">
+        <div className="mx-auto max-w-7xl gap-20 px-8 sm:grid sm:grid-cols-2 sm:px-0">
+          <div className="relative hidden sm:block">
+            <img
+              alt=""
+              src="/about/6.webp"
+              className="aspect-[3/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+          </div>
+          <div className="mx-auto max-w-2xl sm:mt-10 sm:px-0 lg:mx-0 lg:max-w-none">
             <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Our Mission
+              The Mission.
             </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-8 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-xl/8 text-gray-600">
+                <p className="text-lg/8 text-gray-600">
                   At Nocturne, we believe abandoned hardware doesn't have to
                   stay abandoned. When Spotify discontinued Car Thing support,
                   we saw an opportunity to transform disappointment into
                   innovation. Our mission is to breathe new life into these
-                  devices through open source software, empowering users to keep
+                  devices through open source software, enabling users to keep
                   their Car Things not just functional, but better than ever.
                 </p>
-              </div>
-              <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-xl/8 text-gray-600">
-                  We're building more than just replacement software – we're
-                  creating a community where hardware enthusiasts, developers,
-                  and everyday users come together to extend the life of
-                  technology. Through transparent development, active community
-                  engagement, and continuous innovation, we're proving that
-                  end-of-support doesn't mean end-of-life.
+                <p className="mt-6 text-lg/8 text-gray-600">
+                  We believe that innovation thrives in unexpected places.
+                  Through open source principles, we empower users to
+                  experiment, customize, and discover new and exciting uses for
+                  their Car Things. Through our mission, we're not just creating
+                  software - we're creating a community. A community of
+                  developers, car enthusiasts, and tinkerers united by a simple
+                  belief: great hardware deserves great software.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white py-12 sm:py-32">
+        <div className="py-12 sm:py-40">
           <div className="mx-auto grid max-w-7xl gap-12 px-8 sm:px-0 xl:grid-cols-3">
             <div className="max-w-xl">
-              <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-                The Team
+              <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                The Team.
               </h2>
               <p className="mt-6 text-lg/8 text-gray-600">
-                We're a passionate community of developers, car enthusiasts, and
-                tinkerers united by a simple belief: great hardware deserves
-                great software.
+                We're builders, creators, and explorers, working together to
+                unlock the full potential of the Car Thing.
               </p>
             </div>
             <ul
@@ -236,6 +326,102 @@ function About() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="mx-auto mb-32 hidden max-w-7xl gap-20 px-8 sm:grid sm:grid-cols-3 sm:px-0">
+          <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
+            <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.author.handle}
+                  className="pt-8 sm:inline-block sm:w-full sm:px-4"
+                >
+                  <a target="_blank" href={testimonial.href}>
+                    <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6">
+                      <blockquote className="flex-1 text-gray-900">
+                        <p className="h-12 overflow-hidden">{`“${testimonial.body}”`}</p>
+                      </blockquote>
+                      <figcaption className="mt-6 flex items-center gap-x-4">
+                        <img
+                          alt=""
+                          src={testimonial.author.imageUrl}
+                          className="size-10 rounded-full bg-gray-50"
+                        />
+                        <div>
+                          <div className="font-semibold text-gray-900">
+                            {testimonial.author.name}
+                          </div>
+                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mx-auto max-w-2xl sm:col-span-1 sm:px-0 lg:mx-0 lg:max-w-none">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              The Results.
+            </h2>
+            <div className="mt-6 flex flex-col gap-x-8 gap-y-8 lg:flex-row">
+              <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
+                <p className="text-lg/8 text-gray-600">
+                  The positive feedback from our community means a lot to us.
+                  Here are just a few of the kind words people have shared about
+                  our work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mb-20 grid max-w-7xl gap-12 px-8 sm:mb-32 sm:hidden sm:grid-cols-3 sm:px-0">
+          <div className="mx-auto max-w-2xl sm:col-span-1 sm:px-0 lg:mx-0 lg:max-w-none">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              The Results.
+            </h2>
+            <div className="mt-6 flex flex-col gap-x-8 gap-y-8 lg:flex-row">
+              <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
+                <p className="text-lg/8 text-gray-600">
+                  The positive feedback from our community means a lot to us.
+                  Here are just a few of the kind words people have shared about
+                  our work.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
+            <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.author.handle}
+                  className="pt-8 sm:inline-block sm:w-full sm:px-4"
+                >
+                  <a target="_blank" href={testimonial.href}>
+                    <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6">
+                      <blockquote className="flex-1 text-gray-900">
+                        <p className="h-12 overflow-hidden">{`“${testimonial.body}”`}</p>
+                      </blockquote>
+                      <figcaption className="mt-6 flex items-center gap-x-4">
+                        <img
+                          alt=""
+                          src={testimonial.author.imageUrl}
+                          className="size-10 rounded-full bg-gray-50"
+                        />
+                        <div>
+                          <div className="font-semibold text-gray-900">
+                            {testimonial.author.name}
+                          </div>
+                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </main>
