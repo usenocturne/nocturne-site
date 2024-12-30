@@ -46,7 +46,7 @@ function Hero() {
             growing community of users giving their Car Thing a second life with
             our free, open source solution.
           </p>
-          <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:mt-12 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/installation">
               Get Started
               <ChevronRightIcon className="mt-0.5 size-4" />
