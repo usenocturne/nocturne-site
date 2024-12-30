@@ -38,7 +38,6 @@ export async function getLatestCommitDate() {
     const latestDate = new Date(latestTimestamp)
 
     const formattedDate = latestDate.toISOString().split('T')[0]
-    console.log('Formatted date for Schema.org:', formattedDate)
     return formattedDate
   } catch (error) {
     console.error('Error fetching commit dates:', error)

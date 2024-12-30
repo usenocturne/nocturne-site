@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
   metadataBase: new URL('https://usenocturne.com/'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://usenocturne.com',
   },
   keywords: [
     'Nocturne',
