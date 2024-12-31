@@ -115,6 +115,65 @@ function BentoSection() {
   )
 }
 
+function SupportCTA() {
+  return (
+    <Container>
+      <Subheading>Support Nocturne</Subheading>
+      <Heading as="h3" className="mt-2 max-w-[300px] sm:max-w-2xl">
+        Power Car Thing's next chapter.
+      </Heading>
+
+      <div className="mt-10 pb-20 sm:mt-16">
+        <div className="relative isolate h-auto overflow-hidden rounded-3xl bg-[linear-gradient(145deg,var(--tw-gradient-stops))] from-[#7456c1] via-[#fa6767] via-[70%] to-[#ff4d4a] px-6 pb-16 pt-16 shadow-sm ring-1 ring-black/5 data-[dark]:bg-gray-800 data-[dark]:ring-white/15 sm:px-16 md:pt-24 lg:flex lg:h-[380px] lg:items-center lg:gap-x-20 lg:pb-0 lg:pl-16 lg:pr-20 lg:pt-0">
+          <div className="mx-auto max-w-md lg:mx-0 lg:flex-auto lg:text-left">
+            <h4 className="text-balance text-3xl font-medium tracking-tight text-white group-data-[dark]:text-white">
+              Choose Your Support Method
+            </h4>
+            <p className="mt-4 text-pretty text-lg/8 text-white">
+              Nocturne is a community-driven initiative. If you find it
+              valuable, consider supporting our work through a donation. All
+              contributions go towards development and maintenance.
+            </p>
+            <Link href="/about">
+              <p className="duration-350 mt-4 text-pretty text-lg/8 text-white/80 transition ease-in-out hover:text-white/60">
+                Learn more about our mission →
+              </p>
+            </Link>
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-start">
+              <div className="w-full sm:w-[220px]">
+                <Button
+                  href="https://buymeacoffee.com/brandonsaldan"
+                  className="w-full"
+                >
+                  Buy Me a Coffee
+                </Button>
+              </div>
+              <div className="w-full sm:w-[220px]">
+                <Button
+                  href="https://ko-fi.com/brandonsaldan"
+                  className="w-full"
+                >
+                  Ko-Fi
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-8 h-64 sm:h-80 lg:mt-2">
+            <img
+              alt="Nocturne Screenshot"
+              src="/images/nocturne-2.png"
+              width={1824}
+              height={1080}
+              className="absolute left-6 top-0 w-[57rem] max-w-none rounded-md"
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  )
+}
+
 export default function Home() {
   return (
     <div className="overflow-hidden">
@@ -123,6 +182,7 @@ export default function Home() {
         <div className="bg-gradient-to-b from-white from-50% to-gray-100 pt-20">
           <BentoSection />
           <Testimonials />
+          <SupportCTA />
         </div>
       </main>
       <Footer />
