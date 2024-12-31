@@ -165,7 +165,7 @@ function SupportCTA() {
               src="/images/nocturne-2.png"
               width={1824}
               height={1080}
-              className="absolute left-6 top-0 w-[57rem] max-w-none rounded-md"
+              className="absolute top-0 w-[57rem] max-w-none rounded-md sm:left-6"
             />
           </div>
         </div>
