@@ -45,6 +45,7 @@ function TestimonialCard({
   children,
   bounds,
   scrollX,
+  className,
   ...props
 }: {
   img: string
@@ -53,6 +54,7 @@ function TestimonialCard({
   children: React.ReactNode
   bounds: RectReadOnly
   scrollX: MotionValue<number>
+  className?: string
 } & HTMLMotionProps<'div'>) {
   let ref = useRef<HTMLDivElement | null>(null)
 
@@ -93,7 +95,10 @@ function TestimonialCard({
       ref={ref}
       style={{ opacity }}
       {...props}
-      className="relative flex aspect-[9/16] w-72 shrink-0 snap-start scroll-ml-[var(--scroll-padding)] flex-col justify-end overflow-hidden rounded-3xl sm:aspect-[3/4] sm:w-96"
+      className={clsx(
+        'relative flex aspect-[9/16] flex-col justify-end overflow-hidden rounded-3xl sm:aspect-[3/4]',
+        className,
+      )}
     >
       <img
         alt=""
@@ -108,11 +113,11 @@ function TestimonialCard({
         <blockquote>
           <p className="relative text-xl/7 text-white">
             <span aria-hidden="true" className="absolute -translate-x-full">
-              “
+              "
             </span>
             {children}
             <span aria-hidden="true" className="absolute">
-              ”
+              "
             </span>
           </p>
         </blockquote>
@@ -146,40 +151,39 @@ export function Testimonials() {
   }
 
   return (
-    <div className="overflow-hidden py-20">
-      <Container>
+    <Container>
+      <div className="py-20">
         <div ref={setReferenceWindowRef}>
           <Subheading>What everyone is saying</Subheading>
           <Heading as="h3" className="mt-2">
             The reviews are in.
           </Heading>
         </div>
-      </Container>
-      <div
-        ref={scrollRef}
-        className={clsx([
-          'mt-16 flex gap-8',
-          'lg:justify-center',
-          'px-[var(--scroll-padding)] lg:px-0',
-          '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
-          'snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth lg:overflow-x-visible',
-          '[--scroll-padding:max(theme(spacing.6),calc((100vw-theme(maxWidth.2xl))/2))] lg:[--scroll-padding:0]',
-        ])}
-      >
-        {testimonials.map(({ img, name, title, quote }, testimonialIndex) => (
-          <TestimonialCard
-            key={testimonialIndex}
-            name={name}
-            title={title}
-            img={img}
-            bounds={bounds}
-            scrollX={scrollX}
-            onClick={() => scrollTo(testimonialIndex)}
+
+        <div className="mt-10 sm:mt-16">
+          <div
+            ref={scrollRef}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto [scrollbar-width:none] lg:grid lg:grid-cols-6 [&::-webkit-scrollbar]:hidden"
           >
-            {quote}
-          </TestimonialCard>
-        ))}
+            {testimonials.map(
+              ({ img, name, title, quote }, testimonialIndex) => (
+                <TestimonialCard
+                  key={testimonialIndex}
+                  name={name}
+                  title={title}
+                  img={img}
+                  bounds={bounds}
+                  scrollX={scrollX}
+                  onClick={() => scrollTo(testimonialIndex)}
+                  className="w-[calc(100vw-3rem)] shrink-0 snap-start sm:w-[calc(100vw-4rem)] lg:col-span-2 lg:w-auto"
+                >
+                  {quote}
+                </TestimonialCard>
+              ),
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+    </Container>
   )
 }
