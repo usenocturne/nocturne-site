@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface TestimonialAuthor {
   name: string
@@ -14,19 +14,42 @@ interface Testimonial {
 
 interface AnimatedTestimonialProps {
   testimonial: Testimonial
+  index: number
 }
 
-const AnimatedTestimonials = ({ testimonial }: AnimatedTestimonialProps) => {
+const ITEMS_PER_COLUMN = 3
+
+const AnimatedTestimonials = ({
+  testimonial,
+  index,
+}: AnimatedTestimonialProps) => {
   const testimonialRef = useRef<HTMLDivElement>(null)
+  const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth >= 640) return
+    setIsDesktop(window.innerWidth >= 640)
+  }, [])
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (testimonialRef.current) {
+          if (entry.isIntersecting && testimonialRef.current) {
+            if (isDesktop) {
+              const columnIndex = Math.floor(index / ITEMS_PER_COLUMN)
+              setTimeout(() => {
+                if (testimonialRef.current) {
+                  testimonialRef.current.classList.remove(
+                    'opacity-0',
+                    'translate-y-4',
+                  )
+                  testimonialRef.current.classList.add(
+                    'opacity-100',
+                    'translate-y-0',
+                  )
+                }
+              }, columnIndex * 200)
+            } else {
               testimonialRef.current.classList.remove(
                 'opacity-0',
                 'translate-y-8',
@@ -53,12 +76,14 @@ const AnimatedTestimonials = ({ testimonial }: AnimatedTestimonialProps) => {
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [isDesktop, index])
+
+  const initialTransform = isDesktop ? 'translate-y-4' : 'translate-y-8'
 
   return (
     <div
       ref={testimonialRef}
-      className="translate-y-8 transform pt-8 opacity-0 transition-all duration-700 ease-out sm:inline-block sm:w-full sm:transform-none sm:px-4 sm:opacity-100"
+      className={`transform pt-8 opacity-0 transition-all duration-700 ease-out sm:inline-block sm:w-full sm:px-4 ${initialTransform}`}
     >
       <a target="_blank" href={testimonial.href}>
         <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6">

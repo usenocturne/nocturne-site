@@ -260,8 +260,12 @@ function About() {
               role="list"
               className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
             >
-              {people.map((person) => (
-                <AnimatedTeamMember key={person.name} person={person} />
+              {people.map((person, index) => (
+                <AnimatedTeamMember
+                  key={person.name}
+                  person={person}
+                  index={index}
+                />
               ))}
             </ul>
           </div>
@@ -270,10 +274,11 @@ function About() {
         <div className="mx-auto mb-32 hidden max-w-7xl gap-20 px-8 sm:grid sm:grid-cols-3 sm:px-0">
           <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
             <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-              {testimonials.map((testimonial) => (
+              {testimonials.map((testimonial, index) => (
                 <AnimatedTestimonial
                   key={testimonial.author.handle}
                   testimonial={testimonial}
+                  index={index}
                 />
               ))}
             </div>
@@ -311,10 +316,11 @@ function About() {
           </div>
           <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
             <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-              {testimonials.map((testimonial) => (
+              {testimonials.map((testimonial, index) => (
                 <AnimatedTestimonial
                   key={testimonial.author.handle}
                   testimonial={testimonial}
+                  index={index}
                 />
               ))}
             </div>

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface TeamMember {
   name: string
@@ -9,19 +9,37 @@ interface TeamMember {
 
 interface AnimatedTeamMemberProps {
   person: TeamMember
+  index: number
 }
 
-const AnimatedTeamMembers = ({ person }: AnimatedTeamMemberProps) => {
+const AnimatedTeamMembers = ({ person, index }: AnimatedTeamMemberProps) => {
   const memberRef = useRef<HTMLLIElement>(null)
+  const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth >= 640) return
+    setIsDesktop(window.innerWidth >= 640)
+  }, [])
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (memberRef.current) {
+          if (entry.isIntersecting && memberRef.current) {
+            if (isDesktop) {
+              setTimeout(() => {
+                if (memberRef.current) {
+                  const isLeftColumn = index % 2 === 0
+                  memberRef.current.classList.remove(
+                    'opacity-0',
+                    isLeftColumn ? '-translate-x-8' : 'translate-x-8',
+                  )
+                  memberRef.current.classList.add(
+                    'opacity-100',
+                    'translate-x-0',
+                  )
+                }
+              }, index * 150)
+            } else {
               memberRef.current.classList.remove('opacity-0', 'translate-y-8')
               memberRef.current.classList.add('opacity-100', 'translate-y-0')
             }
@@ -42,12 +60,18 @@ const AnimatedTeamMembers = ({ person }: AnimatedTeamMemberProps) => {
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [isDesktop, index])
+
+  const initialTransform = isDesktop
+    ? index % 2 === 0
+      ? '-translate-x-8'
+      : 'translate-x-8'
+    : 'translate-y-8'
 
   return (
     <li
       ref={memberRef}
-      className="translate-y-8 transform opacity-0 transition-all duration-700 ease-out sm:transform-none sm:opacity-100"
+      className={`transform opacity-0 transition-all duration-700 ease-out ${initialTransform}`}
     >
       <div className="flex items-center gap-x-6">
         <div className="group flex items-center gap-x-6">
