@@ -1,5 +1,8 @@
 'use client'
-import { Navbar } from '@/components/about-navbar'
+import { Navbar } from '@/components/about/about-navbar'
+import AnimatedImageGallery from '@/components/about/animated-image-gallery'
+import AnimatedTeamMember from '@/components/about/animated-team-members'
+import AnimatedTestimonial from '@/components/about/animated-testimonials'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Link } from '@/components/link'
@@ -198,52 +201,7 @@ function About() {
                   </p>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                    <div className="relative">
-                      <img
-                        alt=""
-                        src="/about/1.webp"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
-                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                    <div className="relative">
-                      <img
-                        alt=""
-                        src="/about/2.webp"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                    <div className="relative">
-                      <img
-                        alt=""
-                        src="/about/3.webp"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
-                  <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                    <div className="relative">
-                      <img
-                        alt=""
-                        src="/about/4.webp"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                    <div className="relative">
-                      <img
-                        alt=""
-                        src="/about/5.webp"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-                    </div>
-                  </div>
+                  <AnimatedImageGallery />
                 </div>
               </div>
             </div>
@@ -303,27 +261,7 @@ function About() {
               className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
             >
               {people.map((person) => (
-                <li key={person.name}>
-                  <div className="flex items-center gap-x-6">
-                    <div className="group flex items-center gap-x-6">
-                      <a target="_blank" href={person.href}>
-                        <img
-                          alt=""
-                          src={person.imageUrl}
-                          className="size-16 rounded-full"
-                        />
-                      </a>
-                      <div>
-                        <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
-                          {person.name}
-                        </h3>
-                        <p className="bg-gradient-to-r from-[#ff8a5b] from-[28%] via-[#fe7e98] via-[70%] to-[#f984ff] bg-clip-text text-sm/6 font-normal text-transparent">
-                          {person.role}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+                <AnimatedTeamMember key={person.name} person={person} />
               ))}
             </ul>
           </div>
@@ -333,31 +271,10 @@ function About() {
           <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
             <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
               {testimonials.map((testimonial) => (
-                <div
+                <AnimatedTestimonial
                   key={testimonial.author.handle}
-                  className="pt-8 sm:inline-block sm:w-full sm:px-4"
-                >
-                  <a target="_blank" href={testimonial.href}>
-                    <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6">
-                      <blockquote className="flex-1 text-gray-900">
-                        <p className="h-12 overflow-hidden">{`“${testimonial.body}”`}</p>
-                      </blockquote>
-                      <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img
-                          alt=""
-                          src={testimonial.author.imageUrl}
-                          className="size-10 rounded-full bg-gray-50"
-                        />
-                        <div>
-                          <div className="font-semibold text-gray-900">
-                            {testimonial.author.name}
-                          </div>
-                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </a>
-                </div>
+                  testimonial={testimonial}
+                />
               ))}
             </div>
           </div>
@@ -395,31 +312,10 @@ function About() {
           <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
             <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
               {testimonials.map((testimonial) => (
-                <div
+                <AnimatedTestimonial
                   key={testimonial.author.handle}
-                  className="pt-8 sm:inline-block sm:w-full sm:px-4"
-                >
-                  <a target="_blank" href={testimonial.href}>
-                    <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6">
-                      <blockquote className="flex-1 text-gray-900">
-                        <p className="h-12 overflow-hidden">{`“${testimonial.body}”`}</p>
-                      </blockquote>
-                      <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img
-                          alt=""
-                          src={testimonial.author.imageUrl}
-                          className="size-10 rounded-full bg-gray-50"
-                        />
-                        <div>
-                          <div className="font-semibold text-gray-900">
-                            {testimonial.author.name}
-                          </div>
-                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </a>
-                </div>
+                  testimonial={testimonial}
+                />
               ))}
             </div>
           </div>

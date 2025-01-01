@@ -3,8 +3,8 @@
 import { Disclosure, DisclosureButton } from '@headlessui/react'
 import { Bars2Icon } from '@heroicons/react/24/solid'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Link } from './link'
-import { LogoDark } from './logo'
+import { Link } from '../link'
+import { LogoDark } from '../logo'
 
 const links = [
   { href: '/installation', label: 'Installation' },
