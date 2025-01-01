@@ -163,7 +163,7 @@ export function Testimonials() {
         <div className="mt-10 sm:mt-16">
           <div
             ref={scrollRef}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto [scrollbar-width:none] lg:grid lg:grid-cols-6 [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 [scrollbar-width:none] lg:grid lg:grid-cols-6 lg:px-0 [&::-webkit-scrollbar]:hidden"
           >
             {testimonials.map(
               ({ img, name, title, quote }, testimonialIndex) => (
@@ -175,7 +175,7 @@ export function Testimonials() {
                   bounds={bounds}
                   scrollX={scrollX}
                   onClick={() => scrollTo(testimonialIndex)}
-                  className="w-[calc(100vw-3rem)] shrink-0 snap-start sm:w-[calc(100vw-4rem)] lg:col-span-2 lg:w-auto"
+                  className="w-[calc(100vw-5rem)] shrink-0 snap-start sm:w-[calc(100vw-6rem)] lg:col-span-2 lg:w-auto"
                 >
                   {quote}
                 </TestimonialCard>

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 function Marker({
   src,
@@ -13,6 +14,38 @@ function Marker({
   offset: number
   delay: number
 }) {
+  const [isInView, setIsInView] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 640)
+  }, [])
+
+  useEffect(() => {
+    if (!isMobile || hasAnimated.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated.current) {
+            setIsInView(true)
+            hasAnimated.current = true
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.5 },
+    )
+
+    const element = document.querySelector('.map-container')
+    if (element) {
+      observer.observe(element)
+    }
+
+    return () => observer.disconnect()
+  }, [isMobile])
+
   return (
     <motion.div
       variants={{

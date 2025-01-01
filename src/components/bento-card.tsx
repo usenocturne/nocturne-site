@@ -1,5 +1,6 @@
 'use client'
 
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 import { clsx } from 'clsx'
 import { motion } from 'framer-motion'
 import { Subheading } from './text'
@@ -21,8 +22,14 @@ export function BentoCard({
   graphic: React.ReactNode
   fade?: ('top' | 'bottom')[]
 }) {
+  const cardRef = useScrollAnimation<HTMLDivElement>({
+    y: 8,
+    threshold: 0.2,
+  })
+
   return (
     <motion.div
+      ref={cardRef}
       initial="idle"
       whileHover="active"
       variants={{ idle: {}, active: {} }}
@@ -32,6 +39,7 @@ export function BentoCard({
         'group relative flex flex-col overflow-hidden rounded-lg',
         'bg-white shadow-sm ring-1 ring-black/5',
         'data-[dark]:bg-gray-800 data-[dark]:ring-white/15',
+        'translate-y-8 transform opacity-0 transition-all duration-700 ease-out',
       )}
     >
       <div className="relative h-80 shrink-0">{graphic}</div>
