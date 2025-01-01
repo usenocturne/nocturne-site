@@ -124,7 +124,7 @@ function SupportCTA() {
       </Heading>
 
       <div className="mt-10 pb-20 sm:mt-16">
-        <div className="relative isolate h-auto overflow-hidden rounded-3xl bg-[linear-gradient(145deg,var(--tw-gradient-stops))] from-[#7456c1] via-[#fa6767] via-[70%] to-[#ff4d4a] px-6 pb-16 pt-16 shadow-sm ring-1 ring-black/5 data-[dark]:bg-gray-800 data-[dark]:ring-white/15 sm:px-16 md:pt-24 lg:flex lg:h-[380px] lg:items-center lg:gap-x-20 lg:pb-0 lg:pl-16 lg:pr-20 lg:pt-0">
+        <div className="relative isolate h-auto overflow-hidden rounded-3xl bg-[linear-gradient(145deg,var(--tw-gradient-stops))] from-[#7456c1] via-[#fa6767] via-[70%] to-[#ff4d4a] px-6 pb-0 pt-16 shadow-sm ring-1 ring-black/5 data-[dark]:bg-gray-800 data-[dark]:ring-white/15 sm:px-16 md:pt-24 lg:flex lg:h-[380px] lg:items-center lg:gap-x-20 lg:pb-0 lg:pl-16 lg:pr-20 lg:pt-0">
           <div className="mx-auto max-w-md lg:mx-0 lg:flex-auto lg:text-left">
             <h4 className="text-balance text-3xl font-medium tracking-tight text-white group-data-[dark]:text-white">
               Choose Your Support Method
@@ -165,7 +165,7 @@ function SupportCTA() {
               src="/images/nocturne-2.png"
               width={1824}
               height={1080}
-              className="pointer-events-none absolute top-0 w-[57rem] max-w-none rounded-md sm:left-6"
+              className="pointer-events-none absolute top-0 w-[41rem] max-w-none rounded-md sm:left-6 sm:w-[57rem]"
             />
           </div>
         </div>
