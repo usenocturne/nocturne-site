@@ -100,13 +100,13 @@ const testimonials = [
     href: 'https://x.com/janniksco/status/1852361766283444334',
   },
   {
-    body: 'Incredible stuff!',
+    body: 'Meow',
     author: {
-      name: 'brian',
-      handle: 'officialbois',
+      name: 'Simby',
+      handle: 'nocturneteamcat',
       imageUrl: 'testimonials/8.jpg',
     },
-    href: 'https://x.com/officialbois/status/1852280293320999021',
+    href: '/about/cat',
   },
   {
     body: 'Oh this is cool.',
