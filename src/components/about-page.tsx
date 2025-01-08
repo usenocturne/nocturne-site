@@ -340,7 +340,7 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <div className="mb-6 bg-gradient-to-b from-white from-50% to-gray-100 pb-20 sm:mb-0 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
+        <div className="mb-20 bg-gradient-to-b from-white from-50% to-gray-100 sm:mb-0 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
           <About />
         </div>
       </main>
