@@ -40,62 +40,42 @@ const RightCodeTabs = () => {
 
   const tabs: TabsData = {
     setup: {
-      title: 'setup_hotspot.py',
-      code: `def setup_hotspot():
-    # Check if WiFi is available
-    wifi_status = check_wifi_status()
-    if not wifi_status:
-        print("Error: WiFi hardware not detected")
-        return False
-        
-    # Create hotspot configuration
-    config = {
-        "ssid": "Car_Thing_Setup",
-        "wpa_passphrase": generate_password(),
-        "ip_range": "192.168.4.0/24"
-    }
-    
-    # Apply configuration
-    success = apply_hotspot_config(config)
-    if not success:
-        print("Error: Failed to configure hotspot")
-        return False
-        
-    # Start hotspot service
-    if start_hotspot_service():
-        print("Hotspot started successfully")
-        print(f"SSID: {config['ssid']}")
-        print(f"Password: {config['wpa_passphrase']}")
-        return True
-    else:
-        print("Error: Failed to start hotspot")
-        return False`,
+      title: 'setup_hotspot_rpi.py',
+      code: `# check if network config file exists
+if not os.path.exists(config_path):
+    config = open(config_path, "w+")
+else:
+    config = open(config_path, "r+")
+    existing_data = config.read()
+    if existing_data:
+        input("The configuration file already contains data. Press enter if you would like to continue, and overwrite the data in the file.")
+        config.seek(0)
+        config.truncate()
+
+# create connection profile in networkmanager
+config.write(f"""[connection]
+id=CarThingHotspot
+type=wifi
+autoconnect-priority=50
+
+[wifi]
+mode=infrastructure
+ssid={SSID}`,
     },
     readme: {
       title: 'README.md',
-      code: `# Car Thing Setup Guide
+      code: `### Flashing the Spotify Car Thing
 
-1. Download superbird-tool and run the setup process detailed here.
+  To flash your Car Thing with Nocturne, download and unzip 
+  the latest image from Releases. Next, connect the Car Thing to
+  your computer in USB Mode (hold preset buttons 1 and 4 while
+  connecting), and follow either of the flashing methods.
 
-2. Download and unzip the latest image from Releases.
+  Using Terbium (Recommended)
 
-3. Connect Car Thing to your computer in USB Mode:
-   - Hold preset buttons 1 and 4 while connecting
-   - Wait for device recognition
-
-4. Open your command line and run:
-
-   # Go into the superbird-tool repository
-   $ cd C:\\path\\to\\superbird-tool-main
-
-   # Find device
-   $ python superbird_tool.py --find_device
-
-   # Flash the new image
-   $ python superbird_tool.py --flash path/to/nocturne.img
-
-5. Wait for the process to complete.
-   Do not disconnect the device during flashing.`,
+  Open Terbium in a WebUSB compatible browser (ex. Google Chrome,
+  Chromium, etc). Follow the prompts in Terbium and select the folder
+`,
     },
   }
 
