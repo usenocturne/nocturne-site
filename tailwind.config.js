@@ -7,8 +7,10 @@ module.exports = {
         head: '2.88rem',
       },
       backgroundImage: {
-        'texture-1': "url('/texture/texture-1.png')",
-        'texture-2': "url('/texture/texture-2.png')",
+        'light-texture-1': "url('/texture/light/texture-1.png')",
+        'light-texture-2': "url('/texture/light/texture-2.png')",
+        'dark-texture-1': "url('/texture/dark/texture-1.png')",
+        'dark-texture-2': "url('/texture/dark/texture-2.png')",
       },
       animation: {
         'fade-up': 'fadeUp 0.5s ease-out forwards',

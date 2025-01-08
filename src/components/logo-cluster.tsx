@@ -84,14 +84,14 @@ function Circles({
         isInView={isInView}
         isMobile={isMobile}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white to-35%" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white to-35% dark:from-zinc-900" />
     </div>
   )
 }
 
 function MainLogo() {
   return (
-    <div className="absolute left-44 top-32 flex size-16 items-center justify-center rounded-full bg-white shadow ring-1 ring-black/5">
+    <div className="absolute left-44 top-32 flex size-16 items-center justify-center rounded-full bg-white shadow ring-1 ring-black/5 dark:bg-zinc-800 dark:ring-white/10">
       <Mark className="h-9 fill-[#b0b0b0]" />
     </div>
   )
@@ -112,8 +112,25 @@ function Logo({
   isInView: boolean
   isMobile: boolean
 }) {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    setIsDarkMode(mediaQuery.matches)
+
+    const handler = (e: MediaQueryListEvent) => setIsDarkMode(e.matches)
+    mediaQuery.addEventListener('change', handler)
+
+    return () => mediaQuery.removeEventListener('change', handler)
+  }, [])
+
+  const imageSrc = src.replace(
+    '/logo-cluster/light/',
+    `/logo-cluster/${isDarkMode ? 'dark' : 'light'}/`,
+  )
+
   return (
-    <motion.img
+    <motion.div
       variants={{
         idle: { x: 0, y: 0, rotate: 0 },
         active: {
@@ -132,11 +149,11 @@ function Logo({
       initial="idle"
       animate={isMobile && isInView ? 'active' : undefined}
       whileHover={!isMobile ? 'active' : undefined}
-      alt=""
-      src={src}
-      style={{ left, top } as React.CSSProperties}
-      className="absolute size-16 rounded-full bg-white shadow ring-1 ring-black/5"
-    />
+      style={{ left: `${left}px`, top: `${top}px` } as React.CSSProperties}
+      className="absolute size-16 rounded-full bg-white shadow ring-1 ring-black/5 dark:bg-zinc-800 dark:ring-white/10"
+    >
+      <img src={imageSrc} alt="" className="size-16 rounded-full" />
+    </motion.div>
   )
 }
 
@@ -179,7 +196,7 @@ export function LogoCluster() {
       <div className="absolute left-1/2 h-full w-[26rem] -translate-x-1/2">
         <MainLogo />
         <Logo
-          src="/logo-cluster/supabase.svg"
+          src="/logo-cluster/light/supabase.svg"
           left={360}
           top={144}
           hover={{ x: 6, y: 1, rotate: 5, delay: 0.38 }}
@@ -187,7 +204,7 @@ export function LogoCluster() {
           isMobile={isMobile}
         />
         <Logo
-          src="/logo-cluster/nextjs.svg"
+          src="/logo-cluster/light/nextjs.svg"
           left={285}
           top={20}
           hover={{ x: 4, y: -5, rotate: 6, delay: 0.3 }}
@@ -195,7 +212,7 @@ export function LogoCluster() {
           isMobile={isMobile}
         />
         <Logo
-          src="/logo-cluster/cloudflare.svg"
+          src="/logo-cluster/light/cloudflare.svg"
           left={255}
           top={210}
           hover={{ x: 3, y: 5, rotate: 7, delay: 0.2 }}
@@ -203,7 +220,7 @@ export function LogoCluster() {
           isMobile={isMobile}
         />
         <Logo
-          src="/logo-cluster/workers.svg"
+          src="/logo-cluster/light/workers.svg"
           left={144}
           top={40}
           hover={{ x: -2, y: -5, rotate: -6, delay: 0.15 }}
@@ -211,7 +228,7 @@ export function LogoCluster() {
           isMobile={isMobile}
         />
         <Logo
-          src="/logo-cluster/spotify.svg"
+          src="/logo-cluster/light/spotify.svg"
           left={36}
           top={56}
           hover={{ x: -4, y: -5, rotate: -6, delay: 0.35 }}
@@ -219,7 +236,7 @@ export function LogoCluster() {
           isMobile={isMobile}
         />
         <Logo
-          src="/logo-cluster/postgresql.svg"
+          src="/logo-cluster/light/postgresql.svg"
           left={96}
           top={176}
           hover={{ x: -3, y: 5, rotate: 3, delay: 0.15 }}

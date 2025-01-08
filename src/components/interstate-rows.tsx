@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 function Row({ children }: { children: React.ReactNode }) {
   return (
     <div className="group relative">
-      <div className="absolute inset-x-0 top-1/2 h-0.5 bg-gradient-to-r from-black/15 from-[2px] to-[2px] bg-[length:12px_100%]" />
+      <div className="absolute inset-x-0 top-1/2 h-0.5 bg-gradient-to-r from-black/15 from-[2px] to-[2px] bg-[length:12px_100%] dark:from-white/15" />
       <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-black/5 from-[2px] to-[2px] bg-[length:12px_100%] group-last:hidden" />
       {children}
     </div>
@@ -27,7 +27,7 @@ function Logo({
       className={clsx(
         className,
         'absolute top-2 grid grid-cols-[1rem,1fr] items-center gap-2 whitespace-nowrap px-3 py-1',
-        'rounded-full bg-gradient-to-t from-gray-50 from-50% to-gray-100 ring-1 ring-inset ring-white/10',
+        'rounded-full bg-gradient-to-t from-gray-50 from-50% to-gray-100 ring-1 ring-inset ring-white/10 dark:from-zinc-800 dark:to-zinc-800',
         '[--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-timing-function:linear]',
         isActive
           ? '[animation-play-state:running]'
@@ -36,7 +36,9 @@ function Logo({
       )}
     >
       <img alt="" src={src} className="size-4" />
-      <span className="text-sm/6 font-medium text-gray-900">{label}</span>
+      <span className="text-sm/6 font-medium text-gray-900 dark:text-white">
+        {label}
+      </span>
     </div>
   )
 }

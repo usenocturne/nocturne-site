@@ -4,7 +4,7 @@ import { Disclosure, DisclosureButton } from '@headlessui/react'
 import { Bars2Icon } from '@heroicons/react/24/solid'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Link } from '../link'
-import { LogoDark } from '../logo'
+import { Logo, LogoDark } from '../logo'
 
 const links = [
   { href: '/installation', label: 'Installation' },
@@ -19,7 +19,7 @@ function DesktopNav() {
         <div key={href} className="relative flex">
           <Link
             href={href}
-            className="duration-350 flex items-center rounded-2xl px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply transition ease-in-out data-[hover]:text-black"
+            className="duration-350 flex items-center rounded-2xl px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply transition ease-in-out data-[hover]:text-black dark:text-white"
           >
             {label}
           </Link>
@@ -35,7 +35,7 @@ function MobileNavButton() {
       className="duration-350 flex size-12 items-center justify-center self-center rounded-lg transition ease-in-out data-[hover]:bg-black/5 lg:hidden"
       aria-label="Open main menu"
     >
-      <Bars2Icon className="size-6 text-gray-950" />
+      <Bars2Icon className="size-6 text-gray-950 dark:text-white" />
     </DisclosureButton>
   )
 }
@@ -67,7 +67,7 @@ function MobileNav() {
                   >
                     <Link
                       href={href}
-                      className="text-base font-medium text-gray-950"
+                      className="text-base font-medium text-gray-950 dark:text-white"
                     >
                       {label}
                     </Link>
@@ -89,7 +89,8 @@ export function Navbar({ banner }: { banner?: React.ReactNode }) {
         <div className="relative flex gap-6">
           <div className="py-3">
             <Link href="/" title="Home">
-              <LogoDark className="h-9" />
+              <Logo className="hidden h-9 dark:block" />
+              <LogoDark className="h-9 dark:hidden" />
             </Link>
           </div>
           {banner && (

@@ -83,7 +83,7 @@ const AnimatedTeamMembers = ({ person, index }: AnimatedTeamMemberProps) => {
             />
           </a>
           <div>
-            <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
+            <h3 className="text-base/7 font-semibold tracking-tight text-gray-900 dark:text-white">
               {person.name}
             </h3>
             <p className="bg-gradient-to-r from-[#ff8a5b] from-[28%] via-[#fe7e98] via-[70%] to-[#f984ff] bg-clip-text text-sm/6 font-normal text-transparent">

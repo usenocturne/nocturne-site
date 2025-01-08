@@ -9,8 +9,8 @@ import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 function Hero() {
   return (
-    <div className="relative">
-      <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5 sm:h-[35rem]" />
+    <div className="relative dark:bg-slate-950">
+      <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5 sm:h-[35rem] dark:ring-white/10" />
       <Container className="relative px-8 sm:px-0">
         <Navbar
           banner={
@@ -40,9 +40,9 @@ function Hero() {
 function Support() {
   return (
     <Container>
-      <div className="prose prose-lg mx-auto max-w-7xl [&>*]:text-gray-800 [&>h2]:mb-8 [&>h2]:mt-12">
+      <div className="prose prose-lg mx-auto max-w-7xl [&>*]:text-gray-800 dark:[&>*]:text-white [&>h2]:mb-8 [&>h2]:mt-12">
         <Heading as="h2">Why Support Nocturne?</Heading>
-        <p>
+        <p className="dark:text-gray-300">
           Nocturne is powered by a passionate community of developers and Car
           Thing enthusiasts. Your donations help us maintain the infrastructure,
           develop new features, and provide support to users worldwide. By
@@ -52,18 +52,18 @@ function Support() {
 
         <Heading as="h2">Ways to Support</Heading>
         <SubSectionTitle as="h2">One-Time Donations</SubSectionTitle>
-        <p>
+        <p className="dark:text-gray-300">
           Make a one-time contribution through{' '}
           <a
             href="https://buymeacoffee.com/brandonsaldan"
-            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800"
+            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
           >
             Buy Me A Coffee
           </a>
           , or{' '}
           <a
             href="https://ko-fi.com/brandonsaldan"
-            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800"
+            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
           >
             Ko-Fi
           </a>{' '}
@@ -71,12 +71,12 @@ function Support() {
         </p>
 
         <SubSectionTitle as="h2">Contributing Code</SubSectionTitle>
-        <p>
+        <p className="dark:text-gray-300">
           We welcome contributions from developers of all skill levels. Check
           out our{' '}
           <a
             href="https://github.com/usenocturne"
-            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800"
+            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
           >
             GitHub organization
           </a>{' '}
@@ -84,18 +84,18 @@ function Support() {
         </p>
 
         <Heading as="h2">Our Commitment</Heading>
-        <p>
+        <p className="dark:text-gray-300">
           Nocturne will always remain free and open source. Your support helps
           ensure we can maintain this commitment while continuing to improve the
           project. Every contribution, no matter the size, makes a difference in
           keeping Nocturne thriving.
         </p>
 
-        <p>
+        <p className="dark:text-gray-300">
           Questions about supporting Nocturne? Reach out on our{' '}
           <a
             href="https://discord.gg/GTP9AawHPt"
-            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800"
+            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
           >
             Discord server
           </a>
@@ -108,10 +108,10 @@ function Support() {
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden dark:bg-zinc-950">
       <Hero />
       <main>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 pb-20">
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 pb-20 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
           <Support />
         </div>
       </main>

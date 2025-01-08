@@ -3,7 +3,7 @@ import { Button } from './button'
 import { Container } from './container'
 import { Gradient } from './gradient'
 import { Link } from './link'
-import { LogoDark } from './logo'
+import { Logo, LogoDark } from './logo'
 import { Subheading } from './text'
 
 function CallToAction() {
@@ -11,12 +11,15 @@ function CallToAction() {
     <div className="relative pb-16 pt-20 text-center sm:py-24">
       <hgroup>
         <Subheading>Get started</Subheading>
-        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
+        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl dark:text-white">
           Ready to take back your Car Thing?
         </p>
       </hgroup>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="/installation">
+        <Button
+          className="w-full sm:w-auto dark:bg-zinc-900 dark:hover:bg-zinc-800"
+          href="/installation"
+        >
           Get Started
           <ChevronRightIcon className="mt-0.5 size-4" />
         </Button>
@@ -26,7 +29,11 @@ function CallToAction() {
 }
 
 function SitemapHeading({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-sm/6 font-medium text-gray-950/50">{children}</h3>
+  return (
+    <h3 className="text-sm/6 font-medium text-gray-950/50 dark:text-gray-400">
+      {children}
+    </h3>
+  )
 }
 
 function SitemapLinks({ children }: { children: React.ReactNode }) {
@@ -38,7 +45,7 @@ function SitemapLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
     <li>
       <Link
         {...props}
-        className="font-medium text-gray-950 data-[hover]:text-gray-950/75"
+        className="font-medium text-gray-950 transition duration-300 ease-in-out data-[hover]:text-gray-950/75 dark:text-gray-200 dark:hover:text-gray-300"
       />
     </li>
   )
@@ -64,7 +71,7 @@ function Sitemap() {
 
 function Copyright() {
   return (
-    <div className="text-sm/6 text-gray-950">
+    <div className="text-sm/6 text-gray-950 dark:text-gray-200">
       &copy; {new Date().getFullYear()} Nocturne.
     </div>
   )
@@ -72,7 +79,7 @@ function Copyright() {
 
 function Disclaimer() {
   return (
-    <div className="text-sm/6 text-gray-950">
+    <div className="text-sm/6 text-gray-950 dark:text-gray-200">
       "Spotify" and "Car Thing" are trademarks of Spotify AB. This software is
       not affiliated with or endorsed by Spotify AB.
     </div>
@@ -81,9 +88,9 @@ function Disclaimer() {
 
 export function Footer() {
   return (
-    <footer>
-      <Gradient className="relative">
-        <div className="absolute inset-2 rounded-4xl bg-white/95" />{' '}
+    <footer className="bg-gray-100 dark:bg-zinc-950">
+      <Gradient className="relative rounded-4xl">
+        <div className="absolute inset-2 rounded-[24px] bg-white/95 dark:bg-zinc-950" />{' '}
         <Container className="relative px-8 sm:px-0">
           {' '}
           <CallToAction />
@@ -93,7 +100,8 @@ export function Footer() {
                 <div className="col-span-2 flex">
                   <div className="relative pt-6 lg:pb-6">
                     {' '}
-                    <LogoDark className="h-9" />
+                    <Logo className="hidden h-9 dark:block" />
+                    <LogoDark className="h-9 dark:hidden" />
                   </div>
                 </div>
                 <div className="relative col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
@@ -102,7 +110,7 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-between border-t border-black/5 pt-6">
+            <div className="flex justify-between border-t border-black/5 pt-6 dark:border-white/5">
               <div className="relative">
                 {' '}
                 <div className="py-3">

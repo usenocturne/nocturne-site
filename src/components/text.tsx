@@ -19,7 +19,7 @@ export function Heading({
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'text-pretty text-4xl font-medium tracking-tighter text-gray-950 data-[dark]:text-white sm:text-6xl',
+        'text-pretty text-4xl font-medium tracking-tighter text-gray-950 data-[dark]:text-white sm:text-6xl dark:text-white',
       )}
     />
   )
@@ -37,7 +37,7 @@ export function SectionTitle({
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'text-pretty text-3xl font-medium tracking-tighter text-gray-950 data-[dark]:text-white sm:text-5xl',
+        'text-pretty text-3xl font-medium tracking-tighter text-gray-950 data-[dark]:text-white sm:text-5xl dark:text-white',
       )}
     />
   )
@@ -55,7 +55,7 @@ export function SubSectionTitle({
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'text-pretty text-2xl font-medium tracking-tighter text-gray-950 data-[dark]:text-white sm:text-3xl',
+        'text-pretty text-2xl font-medium tracking-tighter text-gray-950 data-[dark]:text-white sm:text-3xl dark:text-white',
       )}
     />
   )
@@ -73,7 +73,7 @@ export function Subheading({
       data-dark={dark ? 'true' : undefined}
       className={clsx(
         className,
-        'font-mono text-xs/5 font-semibold uppercase tracking-widest text-gray-500 data-[dark]:text-gray-400',
+        'font-mono text-xs/5 font-semibold uppercase tracking-widest text-gray-500 data-[dark]:text-gray-400 dark:text-gray-400',
       )}
     />
   )

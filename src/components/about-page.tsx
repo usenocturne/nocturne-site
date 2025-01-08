@@ -122,12 +122,12 @@ const testimonials = [
 function Hero() {
   return (
     <div className="relative">
-      <Container className="relative px-8 sm:px-0">
+      <Container className="relative px-8 sm:px-0 dark:bg-zinc-950">
         <Navbar
           banner={
             <Link
               href="https://github.com/usenocturne/nocturne-image"
-              className="duration-350 flex items-center gap-1 rounded-full bg-gray-950/40 px-3 py-0.5 text-sm/6 font-medium text-white transition ease-in-out data-[hover]:bg-gray-950/30"
+              className="duration-350 flex items-center gap-1 rounded-full bg-gray-950/40 px-3 py-0.5 text-sm/6 font-medium text-white transition ease-in-out data-[hover]:bg-gray-950/30 dark:bg-zinc-900 dark:hover:bg-zinc-800"
             >
               Nocturne Public Beta Now Available
               <ChevronRightIcon className="size-4" />
@@ -141,12 +141,12 @@ function Hero() {
 
 function About() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-zinc-950">
       <main className="isolate">
         <div className="relative isolate -z-10">
           <svg
             aria-hidden="true"
-            className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+            className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)] dark:stroke-zinc-900"
           >
             <defs>
               <pattern
@@ -160,7 +160,11 @@ function About() {
                 <path d="M.5 200V.5H200" fill="none" />
               </pattern>
             </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <svg
+              x="50%"
+              y={-1}
+              className="overflow-visible fill-gray-50 dark:fill-zinc-800"
+            >
               <path
                 d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
                 strokeWidth={0}
@@ -182,17 +186,17 @@ function About() {
                 clipPath:
                   'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
               }}
-              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 dark:hidden"
             />
           </div>
           <div className="overflow-hidden">
             <div className="mx-auto max-w-7xl pb-20 pt-12 sm:pb-32 sm:pt-60 lg:pt-8">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full px-8 sm:px-0 lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                  <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
                     Giving Hardware a Second Life.
                   </h1>
-                  <p className="mt-8 text-pretty text-lg text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                  <p className="mt-8 text-pretty text-lg text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none dark:text-gray-300">
                     When Spotify ended Car Thing support, thousands of devices
                     became paperweights overnight. We're changing that by
                     creating open source software that transforms these
@@ -218,12 +222,12 @@ function About() {
             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
           </div>
           <div className="mx-auto max-w-2xl sm:mt-10 sm:px-0 lg:mx-0 lg:max-w-none">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
               The Mission.
             </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-8 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-lg/8 text-gray-600">
+                <p className="text-lg/8 text-gray-600 dark:text-gray-300">
                   At Nocturne, we believe abandoned hardware doesn't have to
                   stay abandoned. When Spotify discontinued Car Thing support,
                   we saw an opportunity to transform disappointment into
@@ -231,7 +235,7 @@ function About() {
                   devices through open source software, enabling users to keep
                   their Car Things not just functional, but better than ever.
                 </p>
-                <p className="mt-6 text-lg/8 text-gray-600">
+                <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
                   We believe that innovation thrives in unexpected places.
                   Through open source principles, we empower users to
                   experiment, customize, and discover new and exciting uses for
@@ -248,10 +252,10 @@ function About() {
         <div className="py-12 sm:py-40">
           <div className="mx-auto grid max-w-7xl gap-12 px-8 sm:px-0 xl:grid-cols-3">
             <div className="max-w-xl">
-              <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
                 The Team.
               </h2>
-              <p className="mt-6 text-lg/8 text-gray-600">
+              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
                 We're builders, creators, and explorers, working together to
                 unlock the full potential of the Car Thing.
               </p>
@@ -284,12 +288,12 @@ function About() {
             </div>
           </div>
           <div className="mx-auto max-w-2xl sm:col-span-1 sm:px-0 lg:mx-0 lg:max-w-none">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
               The Results.
             </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-8 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-lg/8 text-gray-600">
+                <p className="text-lg/8 text-gray-600 dark:text-gray-300">
                   The positive feedback from our community means a lot to us.
                   Here are just a few of the kind words people have shared about
                   our work.
@@ -301,12 +305,12 @@ function About() {
 
         <div className="mx-auto mb-20 grid max-w-7xl gap-12 px-8 sm:mb-32 sm:hidden sm:grid-cols-3 sm:px-0">
           <div className="mx-auto max-w-2xl sm:col-span-1 sm:px-0 lg:mx-0 lg:max-w-none">
-            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
               The Results.
             </h2>
             <div className="mt-6 flex flex-col gap-x-8 gap-y-8 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-                <p className="text-lg/8 text-gray-600">
+                <p className="text-lg/8 text-gray-600 dark:text-gray-300">
                   The positive feedback from our community means a lot to us.
                   Here are just a few of the kind words people have shared about
                   our work.
@@ -336,7 +340,7 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <div className="mb-6 bg-gradient-to-b from-white from-50% to-gray-100 sm:mb-0">
+        <div className="mb-6 bg-gradient-to-b from-white from-50% to-gray-100 pb-20 sm:mb-0 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
           <About />
         </div>
       </main>

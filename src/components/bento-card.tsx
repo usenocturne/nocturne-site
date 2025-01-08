@@ -37,7 +37,7 @@ export function BentoCard({
       className={clsx(
         className,
         'group relative flex flex-col overflow-hidden rounded-lg',
-        'bg-white shadow-sm ring-1 ring-black/5',
+        'bg-white shadow-sm ring-1 ring-black/5 dark:bg-zinc-900 dark:ring-white/5',
         'data-[dark]:bg-gray-800 data-[dark]:ring-white/15',
         'translate-y-8 transform opacity-0 transition-all duration-700 ease-out',
       )}
@@ -47,10 +47,10 @@ export function BentoCard({
         <Subheading as="h3" dark={dark}>
           {eyebrow}
         </Subheading>
-        <p className="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-[dark]:text-white">
+        <p className="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-[dark]:text-white dark:text-white">
           {title}
         </p>
-        <p className="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-[dark]:text-gray-400">
+        <p className="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-[dark]:text-gray-400 dark:text-gray-400">
           {description}
         </p>
       </div>

@@ -86,21 +86,21 @@ const AnimatedTestimonials = ({
       className={`transform pt-8 opacity-0 transition-all duration-700 ease-out sm:inline-block sm:w-full sm:px-4 ${initialTransform}`}
     >
       <a target="_blank" href={testimonial.href}>
-        <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6">
-          <blockquote className="flex-1 text-gray-900">
+        <figure className="flex flex-col justify-between rounded-2xl bg-gray-50 p-8 text-sm/6 dark:bg-zinc-900">
+          <blockquote className="flex-1 text-gray-900 dark:text-white">
             <p className="h-12 overflow-hidden">{`"${testimonial.body}"`}</p>
           </blockquote>
           <figcaption className="mt-6 flex items-center gap-x-4">
             <img
               alt=""
               src={testimonial.author.imageUrl}
-              className="size-10 rounded-full bg-gray-50"
+              className="size-10 rounded-full"
             />
             <div>
-              <div className="font-semibold text-gray-900">
+              <div className="font-semibold text-gray-900 dark:text-white">
                 {testimonial.author.name}
               </div>
-              <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+              <div className="text-gray-600 dark:text-gray-300">{`@${testimonial.author.handle}`}</div>
             </div>
           </figcaption>
         </figure>
