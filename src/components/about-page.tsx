@@ -303,7 +303,7 @@ function About() {
           </div>
         </div>
 
-        <div className="mx-auto mb-20 grid max-w-7xl gap-12 px-8 sm:mb-32 sm:hidden sm:grid-cols-3 sm:px-0">
+        <div className="mx-auto grid max-w-7xl gap-12 px-8 sm:mb-32 sm:hidden sm:grid-cols-3 sm:px-0">
           <div className="mx-auto max-w-2xl sm:col-span-1 sm:px-0 lg:mx-0 lg:max-w-none">
             <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
               The Results.
@@ -340,7 +340,7 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <div className="mb-20 bg-gradient-to-b from-white from-50% to-gray-100 sm:mb-0 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 pb-20 sm:mb-0 sm:pb-2 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
           <About />
         </div>
       </main>
