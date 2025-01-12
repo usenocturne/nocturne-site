@@ -195,6 +195,7 @@ export async function GET(): Promise<NextResponse<SponsorsResponse>> {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
+        'Access-Control-Allow-Origin': '*',
       },
     })
   } catch (error: unknown) {
@@ -207,7 +208,9 @@ export async function GET(): Promise<NextResponse<SponsorsResponse>> {
       {
         status: 500,
         headers: {
+          'Content-Type': 'application/json',
           'Cache-Control': 'no-store',
+          'Access-Control-Allow-Origin': '*',
         },
       },
     )
