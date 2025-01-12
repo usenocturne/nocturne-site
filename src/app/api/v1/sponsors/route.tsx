@@ -181,15 +181,55 @@ function getKofiSponsors(): string[] {
 }
 
 export async function GET(): Promise<NextResponse<SponsorsResponse>> {
+  const debug: any = {
+    envVars: {
+      hasGithubToken: !!process.env.GITHUB_TOKEN,
+      hasBuyMeACoffeeToken: !!process.env.BUYMEACOFFEE_ACCESS_TOKEN,
+      hasKofiSponsors: !!process.env.KOFI_SPONSORS,
+    },
+    apiResults: {
+      github: null,
+      buyMeACoffee: null,
+      kofi: null,
+    },
+    errors: [],
+  }
+
   try {
     const developers = ['Brandon Saldan', 'bbaovanc', 'Dominic Frye', 'shadow']
 
-    const [buyMeACoffeeSponsors, kofiSponsors, contributors] =
-      await Promise.all([
-        fetchBuyMeACoffeeSponsors(),
-        Promise.resolve(getKofiSponsors()),
-        fetchGitHubContributors(),
-      ])
+    let buyMeACoffeeSponsors: string[] = []
+    try {
+      buyMeACoffeeSponsors = await fetchBuyMeACoffeeSponsors()
+      debug.apiResults.buyMeACoffee = `Success: Found ${buyMeACoffeeSponsors.length} sponsors`
+    } catch (error) {
+      debug.apiResults.buyMeACoffee = `Failed: ${error instanceof Error ? error.message : 'Unknown error'}`
+      debug.errors.push(
+        `BuyMeACoffee Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      )
+    }
+
+    let kofiSponsors: string[] = []
+    try {
+      kofiSponsors = getKofiSponsors()
+      debug.apiResults.kofi = `Success: Found ${kofiSponsors.length} sponsors`
+    } catch (error) {
+      debug.apiResults.kofi = `Failed: ${error instanceof Error ? error.message : 'Unknown error'}`
+      debug.errors.push(
+        `Kofi Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      )
+    }
+
+    let contributors: string[] = []
+    try {
+      contributors = await fetchGitHubContributors()
+      debug.apiResults.github = `Success: Found ${contributors.length} contributors`
+    } catch (error) {
+      debug.apiResults.github = `Failed: ${error instanceof Error ? error.message : 'Unknown error'}`
+      debug.errors.push(
+        `GitHub Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      )
+    }
 
     const allSponsors = Array.from(
       new Set(
@@ -206,31 +246,36 @@ export async function GET(): Promise<NextResponse<SponsorsResponse>> {
       })
       .sort((a: string, b: string) => a.localeCompare(b))
 
-    const response: SponsorsResponse = {
+    const response: SponsorsResponse & { debug?: any } = {
       developers,
       contributors,
       sponsors: allSponsors,
+      debug,
     }
 
-    return new NextResponse(JSON.stringify(response), {
+    return new NextResponse(JSON.stringify(response, null, 2), {
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
         'Access-Control-Allow-Origin': '*',
-        'Content-Disposition': 'inline',
       },
     })
   } catch (error: unknown) {
+    debug.errors.push(
+      `Main Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+    )
+
     return NextResponse.json(
       {
         developers: [],
         contributors: [],
         sponsors: [],
+        debug,
       },
       {
         status: 500,
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json; charset=utf-8',
           'Cache-Control': 'no-store',
           'Access-Control-Allow-Origin': '*',
         },
