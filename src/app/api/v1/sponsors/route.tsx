@@ -28,11 +28,30 @@ interface GitHubPullRequest {
   merged_at: string | null
 }
 
+const fetchWithTimeout = async (
+  url: string,
+  options: RequestInit,
+  timeout = 5000,
+) => {
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), timeout)
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    })
+    return response
+  } finally {
+    clearTimeout(timeoutId)
+  }
+}
+
 async function fetchGitHubContributors(): Promise<string[]> {
   try {
     const allPRs = await Promise.all(
       repos.map(async (repo) => {
-        const response = await fetch(
+        const response = await fetchWithTimeout(
           `https://api.github.com/repos/${repo}/pulls?state=closed&per_page=100`,
           {
             headers: {
@@ -40,6 +59,7 @@ async function fetchGitHubContributors(): Promise<string[]> {
               Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
             },
           },
+          5000,
         )
 
         if (!response.ok) {
@@ -96,13 +116,14 @@ async function fetchGitHubContributors(): Promise<string[]> {
 async function fetchBuyMeACoffeePage(
   page: number,
 ): Promise<BuyMeACoffeeResponse> {
-  const response = await fetch(
+  const response = await fetchWithTimeout(
     `https://developers.buymeacoffee.com/api/v1/supporters?page=${page}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.BUYMEACOFFEE_ACCESS_TOKEN}`,
       },
     },
+    5000,
   )
 
   if (!response.ok) {
@@ -196,6 +217,7 @@ export async function GET(): Promise<NextResponse<SponsorsResponse>> {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
         'Access-Control-Allow-Origin': '*',
+        'Content-Disposition': 'inline',
       },
     })
   } catch (error: unknown) {
