@@ -1,10 +1,10 @@
 'use client'
+import { AboutFooter } from '@/components/about/about-footer'
 import { Navbar } from '@/components/about/about-navbar'
 import AnimatedImageGallery from '@/components/about/animated-image-gallery'
 import AnimatedTeamMember from '@/components/about/animated-team-members'
 import AnimatedTestimonial from '@/components/about/animated-testimonials'
 import { Container } from '@/components/container'
-import { Footer } from '@/components/footer'
 import { Link } from '@/components/link'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
@@ -275,7 +275,7 @@ function About() {
           </div>
         </div>
 
-        <div className="mx-auto mb-32 hidden max-w-7xl gap-20 px-8 sm:grid sm:grid-cols-3 sm:px-0">
+        <div className="mx-auto hidden max-w-7xl gap-20 px-8 pb-32 sm:grid sm:grid-cols-3 sm:px-0">
           <div className="mx-auto max-w-2xl sm:col-span-2 sm:px-0 lg:mx-0 lg:max-w-none">
             <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
               {testimonials.map((testimonial, index) => (
@@ -340,11 +340,11 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 pb-20 sm:mb-0 sm:pb-2 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 pb-20 sm:mb-0 sm:pb-0 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
           <About />
         </div>
       </main>
-      <Footer />
+      <AboutFooter />
     </div>
   )
 }
