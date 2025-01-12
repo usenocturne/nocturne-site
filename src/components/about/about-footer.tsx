@@ -15,9 +15,10 @@ function CallToAction() {
           Ready to take back your Car Thing?
         </p>
       </hgroup>
-      <div className="mt-6">
+      <div className="mt-8">
         <Button
-          className="w-full sm:w-auto dark:bg-zinc-900 dark:hover:bg-zinc-800"
+          variant="outline"
+          className="w-full transition-colors duration-500 sm:w-auto dark:bg-zinc-900 dark:hover:bg-zinc-950"
           href="/installation"
         >
           Get Started
