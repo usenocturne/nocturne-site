@@ -18,8 +18,8 @@ const variants = {
   ),
   outline: clsx(
     'relative inline-flex items-center justify-center px-12 py-[calc(theme(spacing.2)-1px)]',
-    'rounded-full border border-transparent bg-gray-400/40 shadow-md hover:bg-white/95 hover:text-gray-950',
-    'whitespace-nowrap text-base font-medium text-white',
+    'rounded-full border border-transparent bg-black shadow-md hover:bg-white/95 hover:text-gray-950 dark:hover:text-white',
+    'whitespace-nowrap text-base font-medium text-white dark:text-black',
     'duration-350 transition ease-in-out data-[disabled]:bg-gray-950 data-[disabled]:opacity-40',
     'isolate z-10',
   ),

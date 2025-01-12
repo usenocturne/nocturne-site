@@ -18,7 +18,7 @@ function CallToAction() {
       <div className="mt-8">
         <Button
           variant="outline"
-          className="w-full transition-colors duration-500 sm:w-auto dark:bg-zinc-900 dark:hover:bg-zinc-950"
+          className="w-full transition-colors duration-500 sm:w-auto dark:bg-white dark:hover:bg-zinc-950"
           href="/installation"
         >
           Get Started
