@@ -21,7 +21,7 @@ function AuthLinkContent() {
         }
 
         if (window.history.replaceState) {
-            window.history.replaceState('', '', window.location.href)
+            window.history.replaceState({}, '', window.location.href)
         }
     }, [deviceId, salt, baseUrl])
 
