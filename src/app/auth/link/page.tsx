@@ -1,10 +1,10 @@
 'use client'
 
 import { Mark } from '@/components/logo'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function AuthLinkPage() {
+function AuthLinkContent() {
     const searchParams = useSearchParams()
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')
@@ -207,5 +207,24 @@ export default function AuthLinkPage() {
                 </div>
             </div>
         </div>
+    )
+}
+
+export default function AuthLinkPage() {
+    return (
+        <Suspense fallback={
+            <div className="h-screen bg-black">
+                <div className="h-screen bg-black p-6 flex flex-col sm:items-center pt-24">
+                    <div className="w-full max-w-md">
+                        <Mark className="h-14 mb-8 w-auto sm:mx-auto fill-[#CBCBCB] [&>path:last-child]:fill-white" />
+                        <div className="text-white text-sm text-center p-3 rounded-lg">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }>
+            <AuthLinkContent />
+        </Suspense>
     )
 }
