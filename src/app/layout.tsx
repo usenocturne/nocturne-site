@@ -201,6 +201,11 @@ export default async function RootLayout({
             __html: JSON.stringify(jsonLdBreadcrumbList),
           }}
         />
+        <script
+          defer
+          data-domain="usenocturne.com"
+          src="https://plausible.itsnebula.net/js/script.js"
+        ></script>
       </head>
       <body className="text-gray-950 antialiased">
         <GoogleAnalytics />
