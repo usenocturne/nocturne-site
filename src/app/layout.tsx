@@ -204,7 +204,7 @@ export default async function RootLayout({
         <script
           defer
           data-domain="usenocturne.com"
-          src="https://plausible.itsnebula.net/js/script.js"
+          src="https://p.itsnebula.net/js/script.js"
         ></script>
       </head>
       <body className="text-gray-950 antialiased">
