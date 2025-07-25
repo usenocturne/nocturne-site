@@ -203,9 +203,9 @@ export default async function RootLayout({
         />
         <script
           defer
-          data-domain="usenocturne.com"
-          src="https://p.itsnebula.net/js/script.js"
-        ></script>
+          src="https://p.itsnebula.net/script.js"
+          data-website-id="d4c6f738-8602-491d-9a58-486ed20aed14"
+        >
       </head>
       <body className="text-gray-950 antialiased">
         <GoogleAnalytics />
