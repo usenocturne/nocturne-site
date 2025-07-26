@@ -74,7 +74,7 @@ function Sitemap() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950 dark:text-gray-200">
-      &copy; {new Date().getFullYear()} Nocturne.
+      &copy; {new Date().getFullYear()} Vanta Labs.
     </div>
   )
 }
