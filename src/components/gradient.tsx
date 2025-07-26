@@ -1,9 +1,27 @@
 import { clsx } from 'clsx'
 
+interface GradientProps extends React.ComponentPropsWithoutRef<'div'> {
+  colors?: string[]
+}
+
 export function Gradient({
   className,
+  colors,
   ...props
-}: React.ComponentPropsWithoutRef<'div'>) {
+}: GradientProps) {
+  if (colors && colors.length >= 3) {
+    return (
+      <div
+        {...props}
+        className={clsx(className, 'transition-all duration-2000 ease-in-out')}
+        style={{
+          background: `linear-gradient(115deg, ${colors[0]} 28%, ${colors[1]} 70%, ${colors[2]} 100%)`,
+          ...props.style
+        }}
+      />
+    )
+  }
+
   return (
     <div
       {...props}

@@ -5,6 +5,7 @@ import { Gradient } from './gradient'
 import { Link } from './link'
 import { Logo, LogoDark } from './logo'
 import { Subheading } from './text'
+import { useHeroColors } from '@/contexts/hero-colors-context'
 
 function CallToAction() {
   return (
@@ -88,9 +89,11 @@ function Disclaimer() {
 }
 
 export function Footer() {
+  const { colors } = useHeroColors()
+  
   return (
     <footer className="bg-gray-100 dark:bg-zinc-950">
-      <Gradient className="relative rounded-4xl">
+      <Gradient colors={colors.slice(0, 3)} className="relative rounded-4xl">
         <div className="absolute inset-2 rounded-[24px] bg-white/95 dark:bg-zinc-950" />{' '}
         <Container className="relative px-8 sm:px-0">
           {' '}
