@@ -15,10 +15,10 @@ function Hero() {
         <Navbar
           banner={
             <Link
-              href="https://github.com/usenocturne/nocturne-image"
+              href="https://github.com/usenocturne/nocturne"
               className="duration-350 flex items-center gap-1 rounded-full bg-gray-950/40 px-3 py-0.5 text-sm/6 font-medium text-white transition ease-in-out data-[hover]:bg-gray-950/30"
             >
-              Nocturne Public Beta Now Available
+              Nocturne 3.0.0 Now Available
               <ChevronRightIcon className="size-4" />
             </Link>
           }

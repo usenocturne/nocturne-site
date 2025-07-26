@@ -118,10 +118,10 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
         <Navbar
           banner={
             <Link
-              href="https://github.com/usenocturne/nocturne-image"
+              href="https://github.com/usenocturne/nocturne"
               className="duration-350 flex items-center gap-1 rounded-full bg-gray-950/40 px-3 py-0.5 text-sm/6 font-medium text-white transition ease-in-out data-[hover]:bg-gray-950/30"
             >
-              Nocturne Public Beta Now Available
+              Nocturne 3.0.0 Now Available
               <ChevronRightIcon className="size-4" />
             </Link>
           }
@@ -136,7 +136,7 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
             our free, open source solution.
           </p>
           <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/installation">
+            <Button href="https://github.com/usenocturne/nocturne">
               Get Started
               <ChevronRightIcon className="mt-0.5 size-4" />
             </Button>

@@ -76,9 +76,9 @@ const jsonLdSoftware = {
   applicationCategory: ['Multimedia', 'MusicPlayer'],
   operatingSystem: 'Cross-platform',
   softwareVersion: '2.1.2',
-  downloadUrl: 'https://github.com/usenocturne/nocturne-image/releases/latest',
+  downloadUrl: 'https://github.com/usenocturne/nocturne/releases/latest',
   isAccessibleForFree: true,
-  installUrl: 'https://usenocturne.com/installation',
+  installUrl: 'https://github.com/usenocturne/nocturne/blob/main/README.md',
   softwareRequirements:
     'Spotify Car Thing, Raspberry Pi, Spotify Premium account',
   sameAs: [
@@ -158,7 +158,7 @@ const jsonLdBreadcrumbList = {
       '@type': 'ListItem',
       position: 2,
       name: 'Installation',
-      item: 'https://usenocturne.com/installation',
+      item: 'https://github.com/usenocturne/nocturne/blob/main/README.md',
     },
     {
       '@type': 'ListItem',
