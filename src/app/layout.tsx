@@ -157,7 +157,7 @@ const jsonLdBreadcrumbList = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Installation',
+      name: 'Installation Guide',
       item: 'https://github.com/usenocturne/nocturne/blob/main/README.md',
     },
     {

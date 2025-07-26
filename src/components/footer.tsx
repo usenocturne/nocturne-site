@@ -59,7 +59,7 @@ function Sitemap() {
       <div>
         <SitemapHeading>Product</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="https://github.com/usenocturne/nocturne/blob/main/README.md">Installation</SitemapLink>
+          <SitemapLink href="https://github.com/usenocturne/nocturne/blob/main/README.md">Installation Guide</SitemapLink>
           <SitemapLink href="/support">Support Nocturne</SitemapLink>
           <SitemapLink href="https://github.com/usenocturne">
             Source Code
