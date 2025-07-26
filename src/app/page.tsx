@@ -13,6 +13,7 @@ import { Navbar } from '@/components/navbar'
 import RightCodeTabs from '@/components/right-code-tabs'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
+import { ThemeProvider } from '@/components/theme-provider'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import dynamic from 'next/dynamic'
 import 'prismjs/themes/prism.css'
@@ -24,7 +25,7 @@ const CodeBlock = dynamic(() => import('@/components/code-block'), {
 
 function Hero() {
   return (
-    <div className="relative dark:bg-slate-950">
+    <div className="relative bg-white dark:bg-slate-950">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
       <Container className="relative px-8 sm:px-0">
         <Navbar
@@ -221,6 +222,7 @@ function SupportCTA() {
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      <ThemeProvider />
       <Hero />
       <main>
         <div className="bg-gradient-to-b from-white from-50% to-gray-100 pt-8 sm:pt-20 dark:from-zinc-950 dark:from-50% dark:to-zinc-950">
