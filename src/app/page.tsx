@@ -41,7 +41,7 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
     { image: '/images/nocturne-hero-10.png', colors: ['#3B518B', '#202F57', '#142045', '#151231'] },
   ]
 
-  const generateMeshGradient = (colors) => {
+  const generateMeshGradient = (colors: string[]) => {
     const positions = ["at 0% 25%", "at 25% 0%", "at 100% 75%", "at 75% 100%"]
     const radialGradients = positions.map((position, index) => {
       const color = colors[index % colors.length]
@@ -50,7 +50,7 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
     return radialGradients.join(", ")
   }
 
-  const interpolateColor = (color1, color2, factor) => {
+  const interpolateColor = (color1: string, color2: string, factor: number) => {
     const c1 = parseInt(color1.slice(1), 16)
     const c2 = parseInt(color2.slice(1), 16)
 
