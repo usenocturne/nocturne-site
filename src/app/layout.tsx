@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: "Nocturne - Your Car Thing's Second Chapter",
   },
   description:
-    'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
+    'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with Nocturne.',
   metadataBase: new URL('https://usenocturne.com/'),
   alternates: {
     canonical: 'https://usenocturne.com',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: 'https://usenocturne.com/',
     title: "Nocturne - Your Car Thing's Second Chapter",
     description:
-      'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
+      'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with Nocturne.',
     locale: 'en_US',
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Nocturne - Your Car Thing's Second Chapter",
     description:
-      'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
+      'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with Nocturne.',
     images: ['https://usenocturne.com/images/og-image.png'],
   },
   other: {
@@ -72,7 +72,7 @@ const jsonLdSoftware = {
   '@type': 'SoftwareApplication',
   name: 'Nocturne',
   description:
-    'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with our free, open source solution.',
+    'When Spotify ended support, we created a new beginning. Join our growing community of users giving their Car Thing a second life with Nocturne.',
   applicationCategory: ['Multimedia', 'MusicPlayer'],
   operatingSystem: 'Cross-platform',
   softwareVersion: '2.1.2',

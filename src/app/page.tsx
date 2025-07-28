@@ -133,7 +133,7 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
           <p className="mt-6 max-w-2xl text-xl/7 font-medium text-white/90 sm:mt-8 sm:text-2xl/8">
             When Spotify ended support, we created a new beginning. Join our
             growing community of users giving their Car Thing a second life with
-            our free, open source solution.
+            Nocturne.
           </p>
           <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="https://github.com/usenocturne/nocturne">
