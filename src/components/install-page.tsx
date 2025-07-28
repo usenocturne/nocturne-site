@@ -42,7 +42,7 @@ function Hero() {
           <h1 className="font-display text-balance text-head/[0.9] font-medium leading-[50px] tracking-tight text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
             Install Nocturne
           </h1>
-          <p className="mt-4 max-w-2xl text-xl/7 font-medium text-white/90 sm:mt-8 sm:pb-32 sm:text-2xl/8">
+          <p className="mt-4 max-w-2xl text-xl/7 font-medium text-white/90 sm:mt-8 pb-16 sm:pb-32 sm:text-2xl/8">
             Flash Nocturne, connect to Spotify, and join
             thousands of users who've given their Car Thing a second life.
           </p>
