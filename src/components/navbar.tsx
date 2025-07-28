@@ -7,6 +7,7 @@ import { Link } from './link'
 import { Logo } from './logo'
 
 const links = [
+  { href: '/download', label: 'Download' },
   { href: 'https://github.com/usenocturne/nocturne/blob/main/README.md', label: 'Installation Guide' },
   { href: '/support', label: 'Support Nocturne' },
   { href: 'https://github.com/usenocturne', label: 'Source Code' },

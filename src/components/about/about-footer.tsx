@@ -19,7 +19,7 @@ function CallToAction() {
         <Button
           variant="outline"
           className="w-full transition-colors duration-500 sm:w-auto dark:bg-white dark:hover:bg-zinc-950"
-          href="https://github.com/usenocturne/nocturne"
+          href="https://usenocturne.com/download"
         >
           Get Started
           <ChevronRightIcon className="mt-0.5 size-4" />

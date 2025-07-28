@@ -136,7 +136,7 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
             Nocturne.
           </p>
           <div className="mt-8 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="https://github.com/usenocturne/nocturne">
+            <Button href="https://usenocturne.com/download">
               Get Started
               <ChevronRightIcon className="mt-0.5 size-4" />
             </Button>

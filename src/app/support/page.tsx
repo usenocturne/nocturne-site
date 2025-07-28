@@ -9,7 +9,7 @@ import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 function Hero() {
   return (
-    <div className="relative dark:bg-slate-950">
+    <div className="relative dark:bg-zinc-950">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5 sm:h-[35rem] dark:ring-white/10" />
       <Container className="relative px-8 sm:px-0">
         <Navbar
