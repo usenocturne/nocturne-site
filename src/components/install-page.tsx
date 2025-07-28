@@ -162,14 +162,12 @@ function Downloads() {
       <div className="prose prose-lg mx-auto max-w-7xl [&>*]:text-gray-800 dark:[&>*]:text-white [&>h2]:mb-8 [&>h2]:mt-12">
         <Heading as="h2">Latest Release</Heading>
         <p className="dark:text-gray-300">
-          Download the latest Nocturne firmware installer zip file. You'll need this file to flash your Car Thing using{' '}
-          <a
+          If not flashing directly with <a
             href="https://terbium.app"
             className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
           >
             Terbium
-          </a>
-          .
+          </a> (recommended), download the latest Nocturne firmware installer zip file. You can use this file to begin the installation process manually.
         </p>
 
         {loading ? (
