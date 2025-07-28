@@ -4,6 +4,15 @@ interface GradientProps extends React.ComponentPropsWithoutRef<'div'> {
   colors?: string[]
 }
 
+const generateMeshGradient = (colors: string[]) => {
+  const positions = ["at 0% 25%", "at 25% 0%", "at 100% 75%", "at 75% 100%"]
+  const radialGradients = positions.map((position, index) => {
+    const color = colors[index % colors.length]
+    return `radial-gradient(${position}, ${color} 0%, transparent 80%)`
+  })
+  return radialGradients.join(", ")
+}
+
 export function Gradient({
   className,
   colors,
@@ -22,13 +31,16 @@ export function Gradient({
     )
   }
 
+  const fallbackColors = ['#7456c1', '#fa6767', '#ff4d4a', '#7456c1']
+
   return (
     <div
       {...props}
-      className={clsx(
-        className,
-        'bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fd9f7b] from-[28%] via-[#fe7e98] via-[70%] to-[#b461f9] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]',
-      )}
+      className={clsx(className)}
+      style={{
+        background: generateMeshGradient(fallbackColors),
+        ...props.style
+      }}
     />
   )
 }

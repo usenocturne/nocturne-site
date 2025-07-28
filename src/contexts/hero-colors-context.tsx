@@ -25,7 +25,7 @@ export function HeroColorsProvider({
 export function useHeroColors() {
   const context = useContext(HeroColorsContext)
   if (context === undefined) {
-    return { colors: ['#fd9f7b', '#fe7e98', '#b461f9', '#fd9f7b'] }
+    return { colors: ['#7456c1', '#fa6767', '#ff4d4a', '#7456c1'] }
   }
   return context
 }
