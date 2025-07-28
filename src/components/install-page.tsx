@@ -222,6 +222,12 @@ function Downloads() {
         <div className="not-prose mt-6 space-y-4">
           <details className="group rounded-lg border border-gray-200 dark:border-zinc-700">
             <summary className="flex cursor-pointer items-center gap-3 px-4 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-zinc-800">
+              <img 
+                src="https://private-user-images.githubusercontent.com/18669106/471027839-ae4fcc48-5f86-4ea6-90b2-29bf938a2de0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTM2OTY4ODIsIm5iZiI6MTc1MzY5NjU4MiwicGF0aCI6Ii8xODY2OTEwNi80NzEwMjc4MzktYWU0ZmNjNDgtNWY4Ni00ZWE2LTkwYjItMjliZjkzOGEyZGUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzI4VDA5NTYyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTMwNDdjNzcyZmNmY2ZjZDRkZmUzMDY3NGZjNDY5NjhmMjc3YTI5N2FlZmUzZjNhODYyNGI3MzkyYjMyOGNjYzgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.L9VL8FyLif4pXLqpaeeIX5rGN4X6r09x2hkWNKl_wSY" 
+                alt="Bluetooth" 
+                className="h-4 w-4" 
+                style={{ verticalAlign: 'middle' }}
+              />
               Bluetooth (recommended)
               <svg className="ml-auto h-4 w-4 transform transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -248,6 +254,12 @@ function Downloads() {
 
           <details className="group rounded-lg border border-gray-200 dark:border-zinc-700">
             <summary className="flex cursor-pointer items-center gap-3 px-4 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-zinc-800">
+              <img 
+                src="https://camo.githubusercontent.com/02b7b782fafc1e81e099fcafd085b64d328038a4097c57b4b7346d00c1429b67/68747470733a2f2f7573656e6f637475726e652e636f6d2f66617669636f6e2e69636f" 
+                alt="Nocturne" 
+                className="h-4 w-4" 
+                style={{ verticalAlign: 'middle' }}
+              />
               Nocturne Connector (recommended)
               <svg className="ml-auto h-4 w-4 transform transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -272,6 +284,12 @@ function Downloads() {
 
           <details className="group rounded-lg border border-gray-200 dark:border-zinc-700">
             <summary className="flex cursor-pointer items-center gap-3 px-4 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50 dark:text-white dark:hover:bg-zinc-800">
+              <img 
+                src="https://camo.githubusercontent.com/40a84c439c7d859310cf5884a102d54c146031f1d1bdeb1e823af9713823243f/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f382f38372f57696e646f77735f6c6f676f5f2d5f323032312e737667" 
+                alt="Windows" 
+                className="h-4 w-4" 
+                style={{ verticalAlign: 'middle' }}
+              />
               Windows
               <svg className="ml-auto h-4 w-4 transform transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
