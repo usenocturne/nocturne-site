@@ -106,7 +106,7 @@ function Hero({ onColorsChange }: { onColorsChange: (colors: string[]) => void }
   }, [currentIndex, onColorsChange])
 
   return (
-    <div className="relative bg-white dark:bg-slate-950">
+    <div className="relative bg-white dark:bg-zinc-950">
       <div
         className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5"
         style={{
