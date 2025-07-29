@@ -5,15 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "start": "next start",
     "lint": "next lint",
-    "typegen": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate && rm ./src/sanity/extract.json"
+    "typegen": "sanity schema extract --path=src/sanity/extract.json && sanity typegen generate && rm ./src/sanity/extract.json",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@opennextjs/cloudflare": "^1.6.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/prismjs": "^1.26.5",
+    "caniuse-lite": "^1.0.30001727",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "next": "14.2.15",
@@ -21,7 +27,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
-    "react-use-measure": "^2.1.7"
+    "react-use-measure": "^2.1.7",
+    "wrangler": "^4.26.0"
   },
   "devDependencies": {
     "@types/node": "^20.17.19",
