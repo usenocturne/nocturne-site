@@ -145,7 +145,14 @@ function Downloads() {
           throw new Error('Failed to fetch releases')
         }
         const data: GitHubRelease[] = await response.json()
-        setReleases(data)
+        const filtered = data.filter(release =>
+          Array.isArray(release.assets) &&
+          release.assets.some(asset => asset.name === 'update.json')
+        )
+        if (filtered.length === 0) {
+          throw new Error('No releases found')
+        }
+        setReleases(filtered)
       } catch (err) {
         setError('Failed to load releases. Please try again later.')
         console.error('Error fetching releases:', err)
