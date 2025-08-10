@@ -7,17 +7,5 @@
 	"assets": {
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
-	},
-	"kv_namespaces": [
-		{
-			"binding": "nocturne_site",
-			"id": "e7a43da0444d4801980560f3c87722a4"
-		}
-	],
-	"services": [
-		{
-			"binding": "WORKER_SELF_REFERENCE",
-			"service": "nocturne-site"
-		}
-	]
+	}
 }
