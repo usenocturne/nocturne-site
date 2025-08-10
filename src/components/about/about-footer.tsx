@@ -19,7 +19,7 @@ function CallToAction() {
         <Button
           variant="outline"
           className="w-full transition-colors duration-500 sm:w-auto dark:bg-white dark:hover:bg-zinc-950"
-          href="/installation"
+          href="/install"
         >
           Get Started
           <ChevronRightIcon className="mt-0.5 size-4" />
@@ -58,7 +58,7 @@ function Sitemap() {
       <div>
         <SitemapHeading>Product</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/installation">Installation</SitemapLink>
+          <SitemapLink href="/install">Install Nocturne</SitemapLink>
           <SitemapLink href="/support">Support Nocturne</SitemapLink>
           <SitemapLink href="https://github.com/usenocturne">
             Source Code

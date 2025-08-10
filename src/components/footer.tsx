@@ -5,6 +5,7 @@ import { Gradient } from './gradient'
 import { Link } from './link'
 import { Logo, LogoDark } from './logo'
 import { Subheading } from './text'
+import { useHeroColors } from '@/contexts/hero-colors-context'
 
 function CallToAction() {
   return (
@@ -19,7 +20,7 @@ function CallToAction() {
         <Button
           variant="outline"
           className="w-full transition-colors duration-500 sm:w-auto dark:bg-white dark:hover:bg-zinc-950"
-          href="/installation"
+          href="/install"
         >
           Get Started
           <ChevronRightIcon className="mt-0.5 size-4" />
@@ -58,7 +59,7 @@ function Sitemap() {
       <div>
         <SitemapHeading>Product</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/installation">Installation</SitemapLink>
+          <SitemapLink href="/install">Install Nocturne</SitemapLink>
           <SitemapLink href="/support">Support Nocturne</SitemapLink>
           <SitemapLink href="https://github.com/usenocturne">
             Source Code
@@ -73,7 +74,7 @@ function Sitemap() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950 dark:text-gray-200">
-      &copy; {new Date().getFullYear()} Nocturne.
+      &copy; {new Date().getFullYear()} Vanta Labs.
     </div>
   )
 }
@@ -88,9 +89,11 @@ function Disclaimer() {
 }
 
 export function Footer() {
+  const { colors } = useHeroColors()
+
   return (
     <footer className="bg-gray-100 dark:bg-zinc-950">
-      <Gradient className="relative rounded-4xl">
+      <Gradient colors={colors.slice(0, 3)} className="relative rounded-4xl">
         <div className="absolute inset-2 rounded-[24px] bg-white/95 dark:bg-zinc-950" />{' '}
         <Container className="relative px-8 sm:px-0">
           {' '}

@@ -1,4 +1,4 @@
-const REPOS = ['usenocturne/nocturne-ui', 'usenocturne/nocturne-image']
+const REPOS = ['usenocturne/nocturne-ui', 'usenocturne/nocturne']
 
 export async function getLatestCommitDate() {
   try {

@@ -9,16 +9,16 @@ import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 function Hero() {
   return (
-    <div className="relative dark:bg-slate-950">
+    <div className="relative dark:bg-zinc-950">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5 sm:h-[35rem] dark:ring-white/10" />
       <Container className="relative px-8 sm:px-0">
         <Navbar
           banner={
             <Link
-              href="https://github.com/usenocturne/nocturne-image"
+              href="https://github.com/usenocturne/nocturne"
               className="duration-350 flex items-center gap-1 rounded-full bg-gray-950/40 px-3 py-0.5 text-sm/6 font-medium text-white transition ease-in-out data-[hover]:bg-gray-950/30"
             >
-              Nocturne Public Beta Now Available
+              Nocturne 3.0.0 Now Available
               <ChevronRightIcon className="size-4" />
             </Link>
           }

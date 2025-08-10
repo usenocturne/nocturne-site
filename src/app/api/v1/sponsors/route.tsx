@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const repos = ['usenocturne/nocturne-ui', 'usenocturne/nocturne-image']
+const repos = ['usenocturne/nocturne-ui', 'usenocturne/nocturne']
 const manualContributors = ['Jenner Gray']
 
 interface BuyMeACoffeeSponsor {
