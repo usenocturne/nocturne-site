@@ -111,7 +111,7 @@ function ReleasesTable({ releases }: { releases: GitHubRelease[] }) {
                   <ArrowDownTrayIcon className="mr-2 h-4 w-4" />
                   Download
                 </a>
-                <button
+                {/*<button
                   className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors"
                   style={{
                     background: 'linear-gradient(135deg, #7456c1 0%, #fa6767 100%)'
@@ -122,7 +122,7 @@ function ReleasesTable({ releases }: { releases: GitHubRelease[] }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   Flash with Terbium
-                </button>
+                </button>*/}
               </div>
             </div>
           </div>
@@ -169,12 +169,7 @@ function Downloads() {
       <div className="prose prose-lg mx-auto max-w-7xl [&>*]:text-gray-800 dark:[&>*]:text-white [&>h2]:mb-8 [&>h2]:mt-12">
         <Heading as="h2">Latest Release</Heading>
         <p className="dark:text-gray-300">
-          If not flashing directly with <a
-            href="https://terbium.app"
-            className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-          >
-            Terbium
-          </a> (recommended), download the latest Nocturne firmware installer zip file. You can use this file to begin the installation process manually.
+          Download the latest Nocturne firmware installer zip file and follow the steps below.
         </p>
 
         {loading ? (
@@ -191,13 +186,16 @@ function Downloads() {
         )}
 
         <Heading as="h2">Requirements</Heading>
-        <ul className="not-prose dark:text-gray-300">
+        <ul className="not-prose list-disc pl-6 dark:text-gray-300">
           <li>
             Terbium driver is required on Windows. Run{' '}
             <code className="bg-gray-100 px-1 py-0.5 text-sm text-gray-800 dark:bg-gray-800 dark:text-gray-200">
               irm https://driver.terbium.app/get | iex
             </code>{' '}
             in PowerShell.
+          </li>
+          <li>
+            If you intend on using Bluetooth, your phone plan must support hotspot.
           </li>
         </ul>
 
@@ -207,7 +205,7 @@ function Downloads() {
           <strong className="text-red-600 dark:text-red-400">Warning:</strong> Bricking the Car Thing is nearly impossible, but the risk is always there when flashing custom firmware.
         </p>
         <ol className="dark:text-gray-300">
-          <li>Use the "Flash with Terbium" button above to download and flash the firmware automatically, or download the zip file and follow the instructions on{' '}
+          <li>Download the zip file and follow the instructions on{' '}
             <a
               href="https://terbium.app"
               className="duration-350 text-blue-600 no-underline transition ease-in-out hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
@@ -219,6 +217,9 @@ function Downloads() {
         </ol>
         <p className="dark:text-gray-300">
           Flashing will take about 10 minutes, depending on your USB ports. Try multiple ports if one isn't working (Rear IO USB 3/2, BIOS flash port if on AMD, etc).
+        </p>
+        <p className="dark:text-gray-300">
+          If you have issues with Terbium and the zip file, extract the file and use the "Restore from Folder" option.
         </p>
 
         <SubSectionTitle as="h3">Setting up Network Connection</SubSectionTitle>
